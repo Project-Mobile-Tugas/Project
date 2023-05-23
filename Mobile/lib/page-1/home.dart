@@ -4,8 +4,8 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Scene extends StatelessWidget {
+  //const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
