@@ -61,6 +61,7 @@ class Scene extends StatelessWidget {
               Container(
                 width: double.infinity,
                 margin: EdgeInsets.only(left: 5, right: 5),
+                color: Colors.white,
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -74,6 +75,7 @@ class Scene extends StatelessWidget {
               Container(
                 width: double.infinity,
                 margin: EdgeInsets.only(left: 5, right: 5),
+                color: Colors.white,
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),

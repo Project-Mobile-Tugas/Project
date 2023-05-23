@@ -402,13 +402,7 @@ class Scene extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // box1zJA (1:159)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 20 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              18 * fem, 9 * fem, 13 * fem, 9 * fem),
-                          width: double.infinity,
-                          height: 60 * fem,
+                          height: 90,
                           decoration: BoxDecoration(
                             color: Color(0xffffffff),
                             borderRadius: BorderRadius.circular(10 * fem),
@@ -419,7 +413,7 @@ class Scene extends StatelessWidget {
                               Container(
                                 // image2GWa (1:158)
                                 margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 28.5 * fem, 0 * fem),
+                                    20 * fem, 0 * fem, 28.5 * fem, 0 * fem),
                                 width: 41 * fem,
                                 height: 42 * fem,
                                 child: ClipRRect(
@@ -430,230 +424,63 @@ class Scene extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Container(
-                                // autogroup7szgNZc (XxVExTxvUZZGx4TzUr7sZg)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 4 * fem, 34.5 * fem, 12 * fem),
-                                width: 75 * fem,
-                                height: double.infinity,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      // ayamsuwirtelurtnr (6:28)
-                                      left: 0 * fem,
-                                      top: 13 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 75 * fem,
-                                          height: 13 * fem,
-                                          child: Text(
-                                            'Ayam Suwir, Telur',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Sans Serif Collection',
-                                              fontSize: 10 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Nasi Goreng Telur',
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    'Ayam Suwir, Telur',
+                                    textAlign: TextAlign.left,
+                                    style: GoogleFonts.montserrat(fontSize: 13),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Rp. 20.000",
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
                                       ),
-                                    ),
-                                    Positioned(
-                                      // nasigorengndL (1:160)
-                                      left: 0.5 * fem,
-                                      top: 0 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 71 * fem,
-                                          height: 18 * fem,
-                                          child: Text(
-                                            'Nasi Goreng',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Helvetica Neue LT Std',
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // additemgCv (7:40)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 6 * fem, 0 * fem, 12 * fem),
-                                width: 50 * fem,
-                                height: double.infinity,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      // rectangle111FC (7:32)
-                                      left: 1 * fem,
-                                      top: 8 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 46 * fem,
-                                          height: 16 * fem,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      7 * fem),
-                                              color: Color(0x66d9d9d9),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // Whk (7:37)
-                                      left: 0 * fem,
-                                      top: 0 * fem,
-                                      child: Container(
-                                        width: 17 * fem,
-                                        height: 24 * fem,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              // ellipse23xa (7:34)
-                                              left: 0 * fem,
-                                              top: 8 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 17 * fem,
-                                                  height: 16 * fem,
-                                                  child: Image.asset(
-                                                    'assets/page-1/images/ellipse-2-xsQ.png',
-                                                    width: 17 * fem,
-                                                    height: 16 * fem,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              // NV4 (7:36)
-                                              left: 6.5 * fem,
-                                              top: 0 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 4 * fem,
-                                                  height: 16 * fem,
-                                                  child: Text(
-                                                    '-',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Sans Serif Collection',
-                                                      fontSize: 12 * ffem,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      height:
-                                                          1.2575 * ffem / fem,
-                                                      color: Color(0xff000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // rv2 (7:38)
-                                      left: 33 * fem,
-                                      top: 4 * fem,
-                                      child: Container(
-                                        width: 17 * fem,
-                                        height: 20 * fem,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              // ellipse1bsc (7:33)
-                                              left: 0 * fem,
-                                              top: 4 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 17 * fem,
-                                                  height: 16 * fem,
-                                                  child: Image.asset(
-                                                    'assets/page-1/images/ellipse-1-Fdp.png',
-                                                    width: 17 * fem,
-                                                    height: 16 * fem,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              // vez (7:35)
-                                              left: 6.5 * fem,
-                                              top: 0 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 5 * fem,
-                                                  height: 13 * fem,
-                                                  child: Text(
-                                                    '+',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Sans Serif Collection',
-                                                      fontSize: 10 * ffem,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      height:
-                                                          1.2575 * ffem / fem,
-                                                      color: Color(0xff000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // Rre (7:39)
-                                      left: 23.5 * fem,
-                                      top: 9 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 4 * fem,
-                                          height: 9 * fem,
-                                          child: Text(
-                                            '0',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Sans Serif Collection',
-                                              fontSize: 7 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                                      Row(
+                                        children: [
+                                          IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.remove_circle,
+                                                color: Colors.red,
+                                              )),
+                                          Text("0",
+                                              textAlign: TextAlign.left,
+                                              style: GoogleFonts.montserrat(
+                                                  fontSize: 12)),
+                                          IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.add_circle,
+                                                color: Colors.green,
+                                              )),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              )
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 6,
+                        ),
                         Container(
-                          // box1voQ (7:42)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 20 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              18 * fem, 9 * fem, 13 * fem, 9 * fem),
-                          width: double.infinity,
-                          height: 60 * fem,
+                          height: 90,
                           decoration: BoxDecoration(
                             color: Color(0xffffffff),
                             borderRadius: BorderRadius.circular(10 * fem),
@@ -662,9 +489,9 @@ class Scene extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // image2REN (7:44)
+                                // image2GWa (1:158)
                                 margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 20 * fem, 0 * fem),
+                                    20 * fem, 0 * fem, 28.5 * fem, 0 * fem),
                                 width: 41 * fem,
                                 height: 42 * fem,
                                 child: ClipRRect(
@@ -675,228 +502,63 @@ class Scene extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Container(
-                                // autogroupzugeL6S (XxVEdoqLumkN3aiugxzUGe)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 4 * fem, 25 * fem, 12 * fem),
-                                width: 93 * fem,
-                                height: double.infinity,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      // mieayambaksokecilFjC (7:45)
-                                      left: 0 * fem,
-                                      top: 13 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 93 * fem,
-                                          height: 13 * fem,
-                                          child: Text(
-                                            'Mie Ayam, Bakso Kecil',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Sans Serif Collection',
-                                              fontSize: 10 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Mie Ayam',
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    'Mie Ayam, Bakso Kecil',
+                                    textAlign: TextAlign.left,
+                                    style: GoogleFonts.montserrat(fontSize: 13),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Rp. 20.000",
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
                                       ),
-                                    ),
-                                    Positioned(
-                                      // mieayamMGS (7:46)
-                                      left: 8 * fem,
-                                      top: 0 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 56 * fem,
-                                          height: 18 * fem,
-                                          child: Text(
-                                            'Mie Ayam',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Helvetica Neue LT Std',
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // additemrU6 (7:47)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 6 * fem, 0 * fem, 12 * fem),
-                                width: 50 * fem,
-                                height: double.infinity,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      // rectangle11PU2 (7:48)
-                                      left: 1 * fem,
-                                      top: 8 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 46 * fem,
-                                          height: 16 * fem,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      7 * fem),
-                                              color: Color(0x66d9d9d9),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // Ben (7:49)
-                                      left: 0 * fem,
-                                      top: 0 * fem,
-                                      child: Container(
-                                        width: 17 * fem,
-                                        height: 24 * fem,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              // ellipse2JUW (7:50)
-                                              left: 0 * fem,
-                                              top: 8 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 17 * fem,
-                                                  height: 16 * fem,
-                                                  child: Image.asset(
-                                                    'assets/page-1/images/ellipse-2-QGn.png',
-                                                    width: 17 * fem,
-                                                    height: 16 * fem,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              // ogA (7:51)
-                                              left: 6.5 * fem,
-                                              top: 0 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 4 * fem,
-                                                  height: 16 * fem,
-                                                  child: Text(
-                                                    '-',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Sans Serif Collection',
-                                                      fontSize: 12 * ffem,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      height:
-                                                          1.2575 * ffem / fem,
-                                                      color: Color(0xff000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // 7Rx (7:52)
-                                      left: 33 * fem,
-                                      top: 4 * fem,
-                                      child: Container(
-                                        width: 17 * fem,
-                                        height: 20 * fem,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              // ellipse1rPY (7:53)
-                                              left: 0 * fem,
-                                              top: 4 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 17 * fem,
-                                                  height: 16 * fem,
-                                                  child: Image.asset(
-                                                    'assets/page-1/images/ellipse-1-VhY.png',
-                                                    width: 17 * fem,
-                                                    height: 16 * fem,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              // Af8 (7:54)
-                                              left: 6.5 * fem,
-                                              top: 0 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 5 * fem,
-                                                  height: 13 * fem,
-                                                  child: Text(
-                                                    '+',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Sans Serif Collection',
-                                                      fontSize: 10 * ffem,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      height:
-                                                          1.2575 * ffem / fem,
-                                                      color: Color(0xff000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // Uvi (7:55)
-                                      left: 23.5 * fem,
-                                      top: 9 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 4 * fem,
-                                          height: 9 * fem,
-                                          child: Text(
-                                            '0',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Sans Serif Collection',
-                                              fontSize: 7 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                                      Row(
+                                        children: [
+                                          IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.remove_circle,
+                                                color: Colors.red,
+                                              )),
+                                          Text("0",
+                                              textAlign: TextAlign.left,
+                                              style: GoogleFonts.montserrat(
+                                                  fontSize: 12)),
+                                          IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.add_circle,
+                                                color: Colors.green,
+                                              )),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              )
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 6,
+                        ),
                         Container(
-                          // box1zPG (7:57)
-                          padding: EdgeInsets.fromLTRB(
-                              18 * fem, 9 * fem, 13 * fem, 9 * fem),
-                          width: double.infinity,
-                          height: 60 * fem,
+                          height: 90,
                           decoration: BoxDecoration(
                             color: Color(0xffffffff),
                             borderRadius: BorderRadius.circular(10 * fem),
@@ -905,9 +567,9 @@ class Scene extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // image2W6i (7:59)
+                                // image2GWa (1:158)
                                 margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 18.5 * fem, 0 * fem),
+                                    20 * fem, 0 * fem, 28.5 * fem, 0 * fem),
                                 width: 41 * fem,
                                 height: 42 * fem,
                                 child: ClipRRect(
@@ -918,354 +580,56 @@ class Scene extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Container(
-                                // autogroup8fugcvS (XxVELEWJ2wwKrUGZuA8Fug)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 4 * fem, 24.5 * fem, 12 * fem),
-                                width: 95 * fem,
-                                height: double.infinity,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      // ayamtempelalapanY3Q (7:60)
-                                      left: 0 * fem,
-                                      top: 13 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 95 * fem,
-                                          height: 13 * fem,
-                                          child: Text(
-                                            'Ayam, Tempe, Lalapan',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Sans Serif Collection',
-                                              fontSize: 10 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Ayam Geprek',
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    'Ayam, Tempe, Lalapan',
+                                    textAlign: TextAlign.left,
+                                    style: GoogleFonts.montserrat(fontSize: 13),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Rp. 20.000",
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
                                       ),
-                                    ),
-                                    Positioned(
-                                      // ayamgeprekSPg (7:61)
-                                      left: 6.5 * fem,
-                                      top: 0 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 78 * fem,
-                                          height: 18 * fem,
-                                          child: Text(
-                                            'Ayam Geprek',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Helvetica Neue LT Std',
-                                              fontSize: 14 * ffem,
-                                              fontWeight: FontWeight.w500,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                // additemLV4 (7:62)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 6 * fem, 0 * fem, 12 * fem),
-                                width: 50 * fem,
-                                height: double.infinity,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      // rectangle11UbG (7:63)
-                                      left: 1 * fem,
-                                      top: 8 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 46 * fem,
-                                          height: 16 * fem,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(
-                                                      7 * fem),
-                                              color: Color(0x66d9d9d9),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // auC (7:64)
-                                      left: 0 * fem,
-                                      top: 0 * fem,
-                                      child: Container(
-                                        width: 17 * fem,
-                                        height: 24 * fem,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              // ellipse2j1Q (7:65)
-                                              left: 0 * fem,
-                                              top: 8 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 17 * fem,
-                                                  height: 16 * fem,
-                                                  child: Image.asset(
-                                                    'assets/page-1/images/ellipse-2-zAJ.png',
-                                                    width: 17 * fem,
-                                                    height: 16 * fem,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              // 4Ja (7:66)
-                                              left: 6.5 * fem,
-                                              top: 0 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 4 * fem,
-                                                  height: 16 * fem,
-                                                  child: Text(
-                                                    '-',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Sans Serif Collection',
-                                                      fontSize: 12 * ffem,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      height:
-                                                          1.2575 * ffem / fem,
-                                                      color: Color(0xff000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // aGv (7:67)
-                                      left: 33 * fem,
-                                      top: 4 * fem,
-                                      child: Container(
-                                        width: 17 * fem,
-                                        height: 20 * fem,
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              // ellipse1hcS (7:68)
-                                              left: 0 * fem,
-                                              top: 4 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 17 * fem,
-                                                  height: 16 * fem,
-                                                  child: Image.asset(
-                                                    'assets/page-1/images/ellipse-1-tNa.png',
-                                                    width: 17 * fem,
-                                                    height: 16 * fem,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Positioned(
-                                              // 2uc (7:69)
-                                              left: 6.5 * fem,
-                                              top: 0 * fem,
-                                              child: Align(
-                                                child: SizedBox(
-                                                  width: 5 * fem,
-                                                  height: 13 * fem,
-                                                  child: Text(
-                                                    '+',
-                                                    textAlign: TextAlign.center,
-                                                    style: SafeGoogleFont(
-                                                      'Sans Serif Collection',
-                                                      fontSize: 10 * ffem,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      height:
-                                                          1.2575 * ffem / fem,
-                                                      color: Color(0xff000000),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      // k4v (7:70)
-                                      left: 23.5 * fem,
-                                      top: 9 * fem,
-                                      child: Align(
-                                        child: SizedBox(
-                                          width: 4 * fem,
-                                          height: 9 * fem,
-                                          child: Text(
-                                            '0',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont(
-                                              'Sans Serif Collection',
-                                              fontSize: 7 * ffem,
-                                              fontWeight: FontWeight.w400,
-                                              height: 1.2575 * ffem / fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                      Row(
+                                        children: [
+                                          IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.remove_circle,
+                                                color: Colors.red,
+                                              )),
+                                          Text("0",
+                                              textAlign: TextAlign.left,
+                                              style: GoogleFonts.montserrat(
+                                                  fontSize: 12)),
+                                          IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.add_circle,
+                                                color: Colors.green,
+                                              )),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
                               ),
                             ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              // navbarqs4 (1:153)
-              padding:
-                  EdgeInsets.fromLTRB(81 * fem, 12 * fem, 54.5 * fem, 10 * fem),
-              width: 394 * fem,
-              height: 92 * fem,
-              decoration: BoxDecoration(
-                color: Color(0xffffffff),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    // homebuttonwfC (1:150)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 56.95 * fem, 0 * fem),
-                    width: 50.05 * fem,
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // iconhomeoutlineGSa (1:131)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 8 * fem),
-                          padding: EdgeInsets.fromLTRB(
-                              6.26 * fem, 3.76 * fem, 6.26 * fem, 3.75 * fem),
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Color(0x00ffffff),
-                          ),
-                          child: Center(
-                            // vectorZwU (1:130)
-                            child: SizedBox(
-                              width: 37.54 * fem,
-                              height: 37.49 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/vector-G5t.png',
-                                width: 37.54 * fem,
-                                height: 37.49 * fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // homeJPG (1:146)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 2.05 * fem, 0 * fem),
-                          child: Text(
-                            'Home',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont(
-                              'Helvetica Neue LT Std',
-                              fontSize: 13 * ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2575 * ffem / fem,
-                              color: Color(0x7f000000),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // daftarbutton24N (1:151)
-                    margin: EdgeInsets.fromLTRB(
-                        0 * fem, 0 * fem, 54.5 * fem, 0 * fem),
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // iconfiletextoutlinemGr (1:138)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 0 * fem, 8 * fem),
-                          width: 45 * fem,
-                          height: 45 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-file-text-outline-XEW.png',
-                            width: 45 * fem,
-                            height: 45 * fem,
-                          ),
-                        ),
-                        Text(
-                          // daftarFhp (1:147)
-                          'Daftar',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Helvetica Neue LT Std',
-                            fontSize: 13 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.2575 * ffem / fem,
-                            color: Color(0x7f000000),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // transaksibuttonnhk (1:152)
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          // iconshoppingcartYB8 (1:145)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 2 * fem, 8 * fem),
-                          width: 45 * fem,
-                          height: 45 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/icon-shopping-cart-pLN.png',
-                            width: 45 * fem,
-                            height: 45 * fem,
-                          ),
-                        ),
-                        Text(
-                          // transaksiSXQ (1:148)
-                          'Transaksi',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont(
-                            'Helvetica Neue LT Std',
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.2575 * ffem / fem,
-                            color: Color(0x7f000000),
                           ),
                         ),
                       ],
