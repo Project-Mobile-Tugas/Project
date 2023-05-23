@@ -224,37 +224,25 @@ class Scene extends StatelessWidget {
                       children: [
                         Positioned(
                           // buttonA4E (7:578)
-                          left: 0 * fem,
+                          left: 13 * fem,
                           top: 0 * fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 174 * fem,
-                              height: 27 * fem,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10 * fem),
-                                  color: Color(0xff6fcdf5),
+                          child: Container(
+                            // pesanrhk (7:579)
+                            width: 170,
+                            height: 30,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor:
+                                    Color.fromARGB(255, 101, 169, 225),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // pesanrhk (7:579)
-                          left: 62 * fem,
-                          top: 7 * fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 43 * fem,
-                              height: 22 * fem,
+                              onPressed: () {},
                               child: Text(
-                                'Pesan',
-                                style: SafeGoogleFont(
-                                  'Helvetica Neue LT Std',
-                                  fontSize: 17 * ffem,
-                                  fontWeight: FontWeight.w500,
-                                  height: 1.2575 * ffem / fem,
-                                  color: Color(0xff000000),
+                                "Pesan",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 27, 26, 26),
                                 ),
                               ),
                             ),

@@ -79,17 +79,15 @@ class Scene extends StatelessWidget {
                         ),
                         Positioned(
                           // iconarrowiosbackmok (7:388)
-                          left: 0 * fem,
-                          top: 2 * fem,
+                          left: -15 * fem,
+                          top: -5 * fem,
                           child: Align(
-                            child: SizedBox(
-                              width: 43.73 * fem,
-                              height: 36.73 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-arrow-ios-back.png',
-                                width: 43.73 * fem,
-                                height: 36.73 * fem,
-                              ),
+                            child: IconButton(
+                              icon:
+                                  const Icon(Icons.arrow_back_ios_new_rounded),
+                              color: Colors.black,
+                              iconSize: 30,
+                              onPressed: () {},
                             ),
                           ),
                         ),
