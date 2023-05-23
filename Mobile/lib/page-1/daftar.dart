@@ -79,17 +79,15 @@ class Scene extends StatelessWidget {
                         ),
                         Positioned(
                           // iconarrowiosbackpWz (7:495)
-                          left: 0 * fem,
-                          top: 2 * fem,
+                          left: -15 * fem,
+                          top: -5 * fem,
                           child: Align(
-                            child: SizedBox(
-                              width: 43.73 * fem,
-                              height: 36.73 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-arrow-ios-back-mLa.png',
-                                width: 43.73 * fem,
-                                height: 36.73 * fem,
-                              ),
+                            child: IconButton(
+                              icon:
+                                  const Icon(Icons.arrow_back_ios_new_rounded),
+                              color: Colors.black,
+                              iconSize: 30,
+                              onPressed: () {},
                             ),
                           ),
                         ),
@@ -138,25 +136,23 @@ class Scene extends StatelessWidget {
                                     ),
                                     Container(
                                       // boxBuG (7:506)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 5 * fem, 0 * fem, 6 * fem),
-                                      width: 162 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x66d9d9d9),
-                                        borderRadius:
-                                            BorderRadius.circular(20 * fem),
-                                      ),
-                                      child: Center(
+                                      width: 170,
+                                      height: 40,
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          backgroundColor: Color.fromARGB(
+                                              255, 228, 228, 228),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                        ),
+                                        onPressed: () {},
                                         child: Text(
-                                          'Aneka Nasi',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Helvetica Neue LT Std',
-                                            fontSize: 14 * ffem,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.2575 * ffem / fem,
-                                            color: Color(0xff000000),
+                                          "Aneka Makanan",
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 27, 26, 26),
                                           ),
                                         ),
                                       ),
@@ -193,25 +189,23 @@ class Scene extends StatelessWidget {
                                     ),
                                     Container(
                                       // boxSii (7:507)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 5 * fem, 0 * fem, 6 * fem),
-                                      width: 162 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x66d9d9d9),
-                                        borderRadius:
-                                            BorderRadius.circular(20 * fem),
-                                      ),
-                                      child: Center(
+                                      width: 170,
+                                      height: 40,
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          backgroundColor: Color.fromARGB(
+                                              255, 228, 228, 228),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                        ),
+                                        onPressed: () {},
                                         child: Text(
-                                          'Aneka Kuah',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Helvetica Neue LT Std',
-                                            fontSize: 14 * ffem,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.2575 * ffem / fem,
-                                            color: Color(0xff000000),
+                                          "Aneka Kuah",
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 27, 26, 26),
                                           ),
                                         ),
                                       ),
@@ -246,25 +240,23 @@ class Scene extends StatelessWidget {
                                     ),
                                     Container(
                                       // boxLhc (7:510)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 5 * fem, 0 * fem, 6 * fem),
-                                      width: 162 * fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x66d9d9d9),
-                                        borderRadius:
-                                            BorderRadius.circular(20 * fem),
-                                      ),
-                                      child: Center(
+                                      width: 170,
+                                      height: 40,
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          backgroundColor: Color.fromARGB(
+                                              255, 228, 228, 228),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                        ),
+                                        onPressed: () {},
                                         child: Text(
-                                          'Minuman',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont(
-                                            'Helvetica Neue LT Std',
-                                            fontSize: 14 * ffem,
-                                            fontWeight: FontWeight.w500,
-                                            height: 1.2575 * ffem / fem,
-                                            color: Color(0xff000000),
+                                          "Minumman",
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromARGB(255, 27, 26, 26),
                                           ),
                                         ),
                                       ),
