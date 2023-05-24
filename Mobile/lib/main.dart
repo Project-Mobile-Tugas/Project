@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/register.dart';
+
 //import 'package:myapp/page-1/login.dart';
 //import 'package:myapp/page-1/Home.dart';
 //import 'package:myapp/page-1/minuman.dart';
@@ -18,11 +19,13 @@ import 'package:myapp/page-1/register.dart';
 // ...
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(MyApp());
 }
 
