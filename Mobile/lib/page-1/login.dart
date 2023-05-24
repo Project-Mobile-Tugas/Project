@@ -92,9 +92,7 @@ class Scene extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.red, elevation: 3),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/halaman2');
-                      },
+                      onPressed: () {},
                       child: Text('Masuk'))),
               RichText(
                 textAlign: TextAlign.center,
