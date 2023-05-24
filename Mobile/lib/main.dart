@@ -15,7 +15,17 @@ import 'package:myapp/page-1/login.dart';
 //import 'package:myapp/page-1/frame-3.dart';
 //import 'package:myapp/page-1/frame-2.dart';
 
-void main() => runApp(MyApp());
+// ...
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+  }
 
 class MyApp extends StatelessWidget {
   @override
