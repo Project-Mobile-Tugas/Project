@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Transaksi extends StatelessWidget {
+class Scene extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -78,16 +78,18 @@ class Transaksi extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          // iconarrowiosbackmok (7:388)
-                          left: -15 * fem,
-                          top: -5 * fem,
+                          // iconarrowiosbackSaA (7:566)
+                          left: 0 * fem,
+                          top: 2 * fem,
                           child: Align(
-                            child: IconButton(
-                              icon:
-                                  const Icon(Icons.arrow_back_ios_new_rounded),
-                              color: Colors.black,
-                              iconSize: 30,
-                              onPressed: () {},
+                            child: SizedBox(
+                              width: 43.73 * fem,
+                              height: 36.73 * fem,
+                              child: Image.asset(
+                                'assets/page-1/images/icon-arrow-ios-back-9i6.png',
+                                width: 43.73 * fem,
+                                height: 36.73 * fem,
+                              ),
                             ),
                           ),
                         ),

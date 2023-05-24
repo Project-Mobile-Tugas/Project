@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Login extends StatelessWidget {
+class Scene extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -92,7 +92,9 @@ class Login extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.red, elevation: 3),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/halaman2');
+                      },
                       child: Text('Masuk'))),
               RichText(
                 textAlign: TextAlign.center,
