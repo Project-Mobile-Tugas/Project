@@ -263,9 +263,12 @@ class Home extends StatelessWidget {
                                 height: 46 * fem,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/rectangle-3-f8z.png',
-                                    fit: BoxFit.cover,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/page-1/images/rectangle-3-f8z.png',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -304,9 +307,12 @@ class Home extends StatelessWidget {
                                 height: 46 * fem,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/rectangle-4.png',
-                                    fit: BoxFit.cover,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/page-1/images/rectangle-4.png',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -351,9 +357,12 @@ class Home extends StatelessWidget {
                                 height: 46 * fem,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/rectangle-5-2FG.png',
-                                    fit: BoxFit.cover,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/page-1/images/rectangle-5-2FG.png',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),

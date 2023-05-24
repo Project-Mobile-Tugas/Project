@@ -15,7 +15,6 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 
-
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -69,7 +68,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '620197735212',
     projectId: 'uas-pemob-8efc6',
     storageBucket: 'uas-pemob-8efc6.appspot.com',
-    iosClientId: '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
+    iosClientId:
+        '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
     iosBundleId: 'com.example.test',
   );
 
@@ -79,7 +79,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '620197735212',
     projectId: 'uas-pemob-8efc6',
     storageBucket: 'uas-pemob-8efc6.appspot.com',
-    iosClientId: '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
+    iosClientId:
+        '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
     iosBundleId: 'com.example.test',
   );
 }
