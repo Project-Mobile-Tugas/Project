@@ -42,7 +42,7 @@ class _TutupState extends State<Tutup> {
       selectedItemColor: Colors.white38,
       onTap: _onNavbarTapped,
     );
-    return Scaffold(
+    return Container(
       appBar: AppBar(
         title: const Text('beranda'),
       ),

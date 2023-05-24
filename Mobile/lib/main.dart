@@ -6,7 +6,7 @@ import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/register.dart';
 
 //import 'package:myapp/page-1/login.dart';
-//import 'package:myapp/page-1/Home.dart';
+import 'package:myapp/page-1/Home.dart';
 //import 'package:myapp/page-1/minuman.dart';
 //import 'package:myapp/page-1/kuah.dart';
 //import 'package:myapp/page-1/nasi.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: Scene(),
+          child: Home(),
         ),
       ),
     );
