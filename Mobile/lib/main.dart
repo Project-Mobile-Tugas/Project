@@ -14,8 +14,19 @@ import 'package:myapp/page-1/Transaksi.dart';
 // /import 'package:myapp/page-1/confirm-order.dart';
 // import 'package:myapp/page-1/frame-3.dart';
 // import 'package:myapp/page-1/frame-2.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(MyApp());
+// ...
+
+
+Future<void> main() async {
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+  }
 
 class MyApp extends StatelessWidget {
   @override
