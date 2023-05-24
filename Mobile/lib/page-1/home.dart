@@ -4,8 +4,8 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class Scene extends StatelessWidget {
+  //const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -217,10 +217,7 @@ class Home extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(30)),
                                       ),
-                                      onPressed: () {
-                                        Navigator.pushNamed(
-                                            context, '/halaman2');
-                                      },
+                                      onPressed: () {},
                                       child: Text(
                                         'Pesan Sekarang',
                                         style: TextStyle(
@@ -262,12 +259,15 @@ class Home extends StatelessWidget {
                                 width: 57 * fem,
                                 height: 46 * fem,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/rectangle-3-f8z.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                                    borderRadius:
+                                        BorderRadius.circular(10 * fem),
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: Image.asset(
+                                        'assets/page-1/images/rectangle-3-f8z.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    )),
                               ),
                               Text(
                                 // nasi9st (1:119)
@@ -302,11 +302,15 @@ class Home extends StatelessWidget {
                                     0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                 width: 57 * fem,
                                 height: 46 * fem,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/rectangle-4.png',
-                                    fit: BoxFit.cover,
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: ClipRRect(
+                                    borderRadius:
+                                        BorderRadius.circular(10 * fem),
+                                    child: Image.asset(
+                                      'assets/page-1/images/rectangle-4.png',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -350,12 +354,15 @@ class Home extends StatelessWidget {
                                 width: 57 * fem,
                                 height: 46 * fem,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10 * fem),
-                                  child: Image.asset(
-                                    'assets/page-1/images/rectangle-5-2FG.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                                    borderRadius:
+                                        BorderRadius.circular(10 * fem),
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: Image.asset(
+                                        'assets/page-1/images/rectangle-5-2FG.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    )),
                               ),
                               Container(
                                 // minumanr3Y (1:121)

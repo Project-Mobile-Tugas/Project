@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "620197735212",
+    "project_id": "uas-pemob-8efc6",
+    "storage_bucket": "uas-pemob-8efc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620197735212:android:11bd86539d25df4bd65a89",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620197735212-ilnb10m475o75j6cfn85e32f7uiqbf4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEveeLhZV-5VE2SbDmyVjRgP2YNvKsWzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620197735212-ilnb10m475o75j6cfn85e32f7uiqbf4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
