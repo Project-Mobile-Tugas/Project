@@ -3,7 +3,6 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -11,7 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Daftar extends StatelessWidget {
-  const Daftar({super.key});
+  const Daftar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -283,9 +282,9 @@ class Daftar extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // navbarZin (7:517)
+                  // navbarqs4 (1:153)
                   padding: EdgeInsets.fromLTRB(
-                      81 * fem, 12 * fem, 54.5 * fem, 10 * fem),
+                      70 * fem, 12 * fem, 54.5 * fem, 10 * fem),
                   width: 394 * fem,
                   height: 92 * fem,
                   decoration: BoxDecoration(
@@ -295,7 +294,7 @@ class Daftar extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // homebuttonTpA (7:519)
+                        // homebuttonwfC (1:150)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 56.95 * fem, 0 * fem),
                         width: 50.05 * fem,
@@ -304,7 +303,7 @@ class Daftar extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              // iconhomeoutlinePxi (7:521)
+                              // iconhomeoutlineGSa (1:131)
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 8 * fem),
                               padding: EdgeInsets.fromLTRB(6.26 * fem,
@@ -314,20 +313,23 @@ class Daftar extends StatelessWidget {
                                 color: Color(0x00ffffff),
                               ),
                               child: Center(
-                                // vectorggv (7:523)
+                                // vectorZwU (1:130)
                                 child: SizedBox(
                                   width: 37.54 * fem,
                                   height: 37.49 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/vector-qkz.png',
-                                    width: 37.54 * fem,
-                                    height: 37.49 * fem,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/page-1/images/vector-G5t.png',
+                                      width: 37.54 * fem,
+                                      height: 37.49 * fem,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                             Container(
-                              // home1DQ (7:520)
+                              // homeJPG (1:146)
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 2.05 * fem, 0 * fem),
                               child: Text(
@@ -346,7 +348,7 @@ class Daftar extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // daftarbuttonWR4 (7:524)
+                        // daftarbutton24N (1:151)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 54.5 * fem, 0 * fem),
                         height: double.infinity,
@@ -354,19 +356,22 @@ class Daftar extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              // iconfiletextoutlineS3p (7:526)
+                              // iconfiletextoutlinemGr (1:138)
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 8 * fem),
                               width: 45 * fem,
                               height: 45 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-file-text-outline-exn.png',
-                                width: 45 * fem,
-                                height: 45 * fem,
+                              child: InkWell(
+                                onTap: () {},
+                                child: Image.asset(
+                                  'assets/page-1/images/icon-file-text-outline-XEW.png',
+                                  width: 45 * fem,
+                                  height: 45 * fem,
+                                ),
                               ),
                             ),
                             Text(
-                              // daftar7fk (7:525)
+                              // daftarFhp (1:147)
                               'Daftar',
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
@@ -381,25 +386,28 @@ class Daftar extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // transaksibutton3pJ (7:532)
+                        // transaksibuttonnhk (1:152)
                         height: double.infinity,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              // iconshoppingcartCSJ (7:534)
+                              // iconshoppingcartYB8 (1:145)
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 2 * fem, 8 * fem),
                               width: 45 * fem,
                               height: 45 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/icon-shopping-cart-erJ.png',
-                                width: 45 * fem,
-                                height: 45 * fem,
+                              child: InkWell(
+                                onTap: () {},
+                                child: Image.asset(
+                                  'assets/page-1/images/icon-shopping-cart-pLN.png',
+                                  width: 45 * fem,
+                                  height: 45 * fem,
+                                ),
                               ),
                             ),
                             Text(
-                              // transaksiu5p (7:533)
+                              // transaksiSXQ (1:148)
                               'Transaksi',
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(

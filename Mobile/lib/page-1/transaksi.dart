@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
 class Transaksi extends StatelessWidget {
-  const Transaksi({super.key});
+  const Transaksi({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -14,7 +14,7 @@ class Transaksi extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Pesanan',
+          'Transaksi',
           style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
         ),
         centerTitle: true, // Menyatukan judul ke tengah app bar
@@ -204,9 +204,9 @@ class Transaksi extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    // navbarZMG (7:540)
+                    // navbarqs4 (1:153)
                     padding: EdgeInsets.fromLTRB(
-                        81 * fem, 12 * fem, 54.5 * fem, 10 * fem),
+                        70 * fem, 12 * fem, 54.5 * fem, 10 * fem),
                     width: 394 * fem,
                     height: 92 * fem,
                     decoration: BoxDecoration(
@@ -216,7 +216,7 @@ class Transaksi extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // homebutton54i (7:542)
+                          // homebuttonwfC (1:150)
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 56.95 * fem, 0 * fem),
                           width: 50.05 * fem,
@@ -225,7 +225,7 @@ class Transaksi extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // iconhomeoutlineCf8 (7:544)
+                                // iconhomeoutlineGSa (1:131)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                 padding: EdgeInsets.fromLTRB(6.26 * fem,
@@ -235,20 +235,23 @@ class Transaksi extends StatelessWidget {
                                   color: Color(0x00ffffff),
                                 ),
                                 child: Center(
-                                  // vectoruZY (7:546)
+                                  // vectorZwU (1:130)
                                   child: SizedBox(
                                     width: 37.54 * fem,
                                     height: 37.49 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/vector-MJn.png',
-                                      width: 37.54 * fem,
-                                      height: 37.49 * fem,
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: Image.asset(
+                                        'assets/page-1/images/vector-G5t.png',
+                                        width: 37.54 * fem,
+                                        height: 37.49 * fem,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                               Container(
-                                // homeqCJ (7:543)
+                                // homeJPG (1:146)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 2.05 * fem, 0 * fem),
                                 child: Text(
@@ -267,7 +270,7 @@ class Transaksi extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // daftarbuttonxGv (7:547)
+                          // daftarbutton24N (1:151)
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 54.5 * fem, 0 * fem),
                           height: double.infinity,
@@ -275,19 +278,22 @@ class Transaksi extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // iconfiletextoutline68E (7:549)
+                                // iconfiletextoutlinemGr (1:138)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                 width: 45 * fem,
                                 height: 45 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-file-text-outline-NFY.png',
-                                  width: 45 * fem,
-                                  height: 45 * fem,
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    'assets/page-1/images/icon-file-text-outline-XEW.png',
+                                    width: 45 * fem,
+                                    height: 45 * fem,
+                                  ),
                                 ),
                               ),
                               Text(
-                                // daftarb4z (7:548)
+                                // daftarFhp (1:147)
                                 'Daftar',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
@@ -302,25 +308,28 @@ class Transaksi extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // transaksibuttonXUS (7:555)
+                          // transaksibuttonnhk (1:152)
                           height: double.infinity,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // iconshoppingcart4jG (7:557)
+                                // iconshoppingcartYB8 (1:145)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 2 * fem, 8 * fem),
                                 width: 45 * fem,
                                 height: 45 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-shopping-cart-CRc.png',
-                                  width: 45 * fem,
-                                  height: 45 * fem,
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    'assets/page-1/images/icon-shopping-cart-pLN.png',
+                                    width: 45 * fem,
+                                    height: 45 * fem,
+                                  ),
                                 ),
                               ),
                               Text(
-                                // transaksim7t (7:556)
+                                // transaksiSXQ (1:148)
                                 'Transaksi',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(

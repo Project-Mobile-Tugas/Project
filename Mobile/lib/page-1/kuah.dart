@@ -578,9 +578,9 @@ class Kuah extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      // navbaryWv (1:231)
+                      // navbarqs4 (1:153)
                       padding: EdgeInsets.fromLTRB(
-                          81 * fem, 12 * fem, 54.5 * fem, 10 * fem),
+                          70 * fem, 12 * fem, 54.5 * fem, 10 * fem),
                       width: 394 * fem,
                       height: 92 * fem,
                       decoration: BoxDecoration(
@@ -590,7 +590,7 @@ class Kuah extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // homebuttonUia (1:233)
+                            // homebuttonwfC (1:150)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 56.95 * fem, 0 * fem),
                             width: 50.05 * fem,
@@ -599,7 +599,7 @@ class Kuah extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // iconhomeoutlineQML (1:235)
+                                  // iconhomeoutlineGSa (1:131)
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                   padding: EdgeInsets.fromLTRB(6.26 * fem,
@@ -609,20 +609,23 @@ class Kuah extends StatelessWidget {
                                     color: Color(0x00ffffff),
                                   ),
                                   child: Center(
-                                    // vectori78 (1:237)
+                                    // vectorZwU (1:130)
                                     child: SizedBox(
                                       width: 37.54 * fem,
                                       height: 37.49 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/vector-jTL.png',
-                                        width: 37.54 * fem,
-                                        height: 37.49 * fem,
+                                      child: InkWell(
+                                        onTap: () {},
+                                        child: Image.asset(
+                                          'assets/page-1/images/vector-G5t.png',
+                                          width: 37.54 * fem,
+                                          height: 37.49 * fem,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  // homeErA (1:234)
+                                  // homeJPG (1:146)
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 2.05 * fem, 0 * fem),
                                   child: Text(
@@ -641,7 +644,7 @@ class Kuah extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // daftarbuttonZNe (1:238)
+                            // daftarbutton24N (1:151)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 54.5 * fem, 0 * fem),
                             height: double.infinity,
@@ -649,19 +652,22 @@ class Kuah extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // iconfiletextoutlinetfp (1:240)
+                                  // iconfiletextoutlinemGr (1:138)
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                   width: 45 * fem,
                                   height: 45 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-file-text-outline-SPx.png',
-                                    width: 45 * fem,
-                                    height: 45 * fem,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/page-1/images/icon-file-text-outline-XEW.png',
+                                      width: 45 * fem,
+                                      height: 45 * fem,
+                                    ),
                                   ),
                                 ),
                                 Text(
-                                  // daftarCgW (1:239)
+                                  // daftarFhp (1:147)
                                   'Daftar',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
@@ -676,25 +682,28 @@ class Kuah extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // transaksibuttonYVU (1:246)
+                            // transaksibuttonnhk (1:152)
                             height: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // iconshoppingcarthNN (1:248)
+                                  // iconshoppingcartYB8 (1:145)
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 2 * fem, 8 * fem),
                                   width: 45 * fem,
                                   height: 45 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/icon-shopping-cart-s8J.png',
-                                    width: 45 * fem,
-                                    height: 45 * fem,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/page-1/images/icon-shopping-cart-pLN.png',
+                                      width: 45 * fem,
+                                      height: 45 * fem,
+                                    ),
                                   ),
                                 ),
                                 Text(
-                                  // transaksiCpv (1:247)
+                                  // transaksiSXQ (1:148)
                                   'Transaksi',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(

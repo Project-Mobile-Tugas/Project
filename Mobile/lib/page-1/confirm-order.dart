@@ -205,9 +205,9 @@ class Konfirmasi extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    // navbarJJi (7:585)
+                    // navbarqs4 (1:153)
                     padding: EdgeInsets.fromLTRB(
-                        81 * fem, 12 * fem, 54.5 * fem, 10 * fem),
+                        70 * fem, 12 * fem, 54.5 * fem, 10 * fem),
                     width: 394 * fem,
                     height: 92 * fem,
                     decoration: BoxDecoration(
@@ -217,7 +217,7 @@ class Konfirmasi extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // homebuttonboc (7:587)
+                          // homebuttonwfC (1:150)
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 56.95 * fem, 0 * fem),
                           width: 50.05 * fem,
@@ -226,7 +226,7 @@ class Konfirmasi extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // iconhomeoutlineXSN (7:589)
+                                // iconhomeoutlineGSa (1:131)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                 padding: EdgeInsets.fromLTRB(6.26 * fem,
@@ -236,20 +236,23 @@ class Konfirmasi extends StatelessWidget {
                                   color: Color(0x00ffffff),
                                 ),
                                 child: Center(
-                                  // vectorpgN (7:591)
+                                  // vectorZwU (1:130)
                                   child: SizedBox(
                                     width: 37.54 * fem,
                                     height: 37.49 * fem,
-                                    child: Image.asset(
-                                      'assets/page-1/images/vector-GVk.png',
-                                      width: 37.54 * fem,
-                                      height: 37.49 * fem,
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: Image.asset(
+                                        'assets/page-1/images/vector-G5t.png',
+                                        width: 37.54 * fem,
+                                        height: 37.49 * fem,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                               Container(
-                                // home8wx (7:588)
+                                // homeJPG (1:146)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 2.05 * fem, 0 * fem),
                                 child: Text(
@@ -268,7 +271,7 @@ class Konfirmasi extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // daftarbuttonTjL (7:592)
+                          // daftarbutton24N (1:151)
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 54.5 * fem, 0 * fem),
                           height: double.infinity,
@@ -276,19 +279,22 @@ class Konfirmasi extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // iconfiletextoutlineQPg (7:594)
+                                // iconfiletextoutlinemGr (1:138)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 0 * fem, 8 * fem),
                                 width: 45 * fem,
                                 height: 45 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-file-text-outline-qcz.png',
-                                  width: 45 * fem,
-                                  height: 45 * fem,
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    'assets/page-1/images/icon-file-text-outline-XEW.png',
+                                    width: 45 * fem,
+                                    height: 45 * fem,
+                                  ),
                                 ),
                               ),
                               Text(
-                                // daftarifG (7:593)
+                                // daftarFhp (1:147)
                                 'Daftar',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(
@@ -303,25 +309,28 @@ class Konfirmasi extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // transaksibutton4UE (7:600)
+                          // transaksibuttonnhk (1:152)
                           height: double.infinity,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // iconshoppingcartQnz (7:602)
+                                // iconshoppingcartYB8 (1:145)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 2 * fem, 8 * fem),
                                 width: 45 * fem,
                                 height: 45 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/icon-shopping-cart-mug.png',
-                                  width: 45 * fem,
-                                  height: 45 * fem,
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    'assets/page-1/images/icon-shopping-cart-pLN.png',
+                                    width: 45 * fem,
+                                    height: 45 * fem,
+                                  ),
                                 ),
                               ),
                               Text(
-                                // transaksi6vi (7:601)
+                                // transaksiSXQ (1:148)
                                 'Transaksi',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont(

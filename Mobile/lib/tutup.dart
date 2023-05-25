@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/page-1/Home.dart';
-import 'package:myapp/page-1/Daftar.dart';
-import 'package:myapp/page-1/Transaksi.dart';
+import 'package:myapp/page-1/home.dart';
+import 'package:myapp/page-1/daftar.dart';
+import 'package:myapp/page-1/transaksi.dart';
 
 class Tutup extends StatefulWidget {
   const Tutup({super.key});
@@ -22,13 +22,13 @@ class _TutupState extends State<Tutup> {
   @override
   Widget build(BuildContext context) {
     final _listPage = <Widget>[
-      //Home(),
+      Home(),
       Daftar(),
       Transaksi(),
     ];
 
     final _bottomNavBarItems = <BottomNavigationBarItem>[
-      const BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+      const BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
       const BottomNavigationBarItem(
           icon: Icon(Icons.sticky_note_2), label: "Daftar"),
       const BottomNavigationBarItem(
@@ -46,7 +46,7 @@ class _TutupState extends State<Tutup> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: const Text('home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: _listPage[_selectedTabIndex],
