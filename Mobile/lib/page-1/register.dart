@@ -40,6 +40,7 @@ class Register extends StatelessWidget {
                       child: Text(
                         'WAROENG\nMAHASISWA',
                         textAlign: TextAlign.center,
+<<<<<<< HEAD
                         style: SafeGoogleFont(
                           'Rockwell',
                           fontSize: 32,
@@ -68,6 +69,15 @@ class Register extends StatelessWidget {
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
+=======
+                        text: TextSpan(
+                          style: SafeGoogleFont(
+                            'Helvetica Neue LT Std',
+                            fontSize: 16 * ffem,
+                            fontWeight: FontWeight.w500,
+                            height: 1.2575 * ffem / fem,
+                            color: Color(0xff000000),
+>>>>>>> 9e6eaea39fbd67c7be41dc70f5d417ac3d3391cf
                           ),
                           prefixIcon: Icon(
                             Icons.search,
@@ -131,7 +141,11 @@ class Register extends StatelessWidget {
                               text: 'Masuk',
                               style: SafeGoogleFont(
                                 'Helvetica Neue LT Std',
+<<<<<<< HEAD
                                 fontSize: 11,
+=======
+                                fontSize: 16 * ffem,
+>>>>>>> 9e6eaea39fbd67c7be41dc70f5d417ac3d3391cf
                                 fontWeight: FontWeight.w500,
                                 height: 1.2575,
                                 color: Color(0xffe42727),
