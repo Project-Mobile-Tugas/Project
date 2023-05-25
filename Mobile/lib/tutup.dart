@@ -22,7 +22,9 @@ class _TutupState extends State<Tutup> {
   @override
   Widget build(BuildContext context) {
     final _listPage = <Widget>[
-      //Home(),
+      Home(),
+      Daftar(),
+      Transaksi(),
     ];
 
     final _bottomNavBarItems = <BottomNavigationBarItem>[
@@ -44,7 +46,7 @@ class _TutupState extends State<Tutup> {
     );
     return Scaffold(
       appBar: AppBar(
-        title: const Text('beranda'),
+        title: const Text('home'),
       ),
       body: Center(
         child: _listPage[_selectedTabIndex],

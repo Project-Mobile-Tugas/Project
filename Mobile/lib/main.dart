@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/login.dart';
+import 'package:myapp/page-1/nasi.dart';
 import 'package:myapp/utils.dart';
 //import 'package:myapp/page-1/register.dart';
 //import 'package:myapp/page-1/login.dart';
-//import 'package:myapp/page-1/Home.dart';
+import 'package:myapp/page-1/Home.dart';
 //import 'package:myapp/page-1/minuman.dart';
 //import 'package:myapp/page-1/kuah.dart';
 //import 'package:myapp/page-1/nasi.dart';
 //import 'package:myapp/page-1/Daftar.dart';
 //import 'package:myapp/page-1/Transaksi.dart';
-import 'package:myapp/page-1/confirm-order.dart';
+//import 'package:myapp/page-1/confirm-order.dart';
 // import 'package:myapp/page-1/frame-3.dart';
 // import 'package:myapp/page-1/frame-2.dart';
 
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: Konfirmasi(),
+          child: Home(),
         ),
       ),
     );
