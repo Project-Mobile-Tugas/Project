@@ -132,7 +132,7 @@ class Register extends StatelessWidget {
                         text: TextSpan(
                           style: SafeGoogleFont(
                             'Helvetica Neue LT Std',
-                            fontSize: 11 * ffem,
+                            fontSize: 16 * ffem,
                             fontWeight: FontWeight.w500,
                             height: 1.2575 * ffem / fem,
                             color: Color(0xff000000),
@@ -145,7 +145,7 @@ class Register extends StatelessWidget {
                               text: 'Masuk',
                               style: SafeGoogleFont(
                                 'Helvetica Neue LT Std',
-                                fontSize: 11 * ffem,
+                                fontSize: 16 * ffem,
                                 fontWeight: FontWeight.w500,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0xffe42727),
