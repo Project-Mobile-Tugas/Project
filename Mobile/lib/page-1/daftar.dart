@@ -17,27 +17,27 @@ class Daftar extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
-      child: Column(
-        children: <Widget>[
-          AppBar(
-            title: Text(
-              'Daftar Menu',
-              style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
-            ),
-            centerTitle: true, // Menyatukan judul ke tengah app bar
-            backgroundColor: Colors.white,
-            leading: IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                color: Colors.black,
-                size: 30,
-              ),
-              onPressed: () {
-                // Navigasi kembali saat tombol ditekan
-              },
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Daftar Menu',
+          style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
+        ),
+        centerTitle: true, // Menyatukan judul ke tengah app bar
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.black,
+            size: 30,
           ),
+          onPressed: () {
+            // Navigasi kembali saat tombol ditekan
+          },
+        ),
+      ),
+      body: ListView(
+        children: [
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -404,7 +404,7 @@ class Daftar extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Helvetica Neue LT Std',
-                                fontSize: 13 * ffem,
+                                fontSize: 12 * ffem,
                                 fontWeight: FontWeight.w500,
                                 height: 1.2575 * ffem / fem,
                                 color: Color(0x7f000000),

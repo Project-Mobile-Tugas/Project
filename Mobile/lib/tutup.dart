@@ -22,7 +22,7 @@ class _TutupState extends State<Tutup> {
   @override
   Widget build(BuildContext context) {
     final _listPage = <Widget>[
-      Home(),
+      //Home(),
       Daftar(),
       Transaksi(),
     ];

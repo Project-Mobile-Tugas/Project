@@ -11,27 +11,27 @@ class Nasi extends StatelessWidget {
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
-      child: Column(
-        children: <Widget>[
-          AppBar(
-            title: Text(
-              'Nasi',
-              style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
-            ),
-            centerTitle: true, // Menyatukan judul ke tengah app bar
-            backgroundColor: Color(0xffeeeeee),
-            leading: IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                color: Colors.black,
-                size: 30,
-              ),
-              onPressed: () {
-                // Navigasi kembali saat tombol ditekan
-              },
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'nasi',
+          style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
+        ),
+        centerTitle: true, // Menyatukan judul ke tengah app bar
+        backgroundColor: Color(0xffeeeeee),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.black,
+            size: 30,
           ),
+          onPressed: () {
+            Navigator.pop(context); // Navigasi kembali saat tombol ditekan
+          },
+        ),
+      ),
+      body: ListView(
+        children: [
           Container(
             child: Container(
               width: double.infinity,
@@ -48,7 +48,7 @@ class Nasi extends StatelessWidget {
                     Container(
                       // autogroup5z5tkES (XxVGikMpx53ZZ3Ge925z5t)
                       padding: EdgeInsets.fromLTRB(
-                          32 * fem, 0 * fem, 61 * fem, 84 * fem),
+                          32 * fem, 20 * fem, 61 * fem, 84 * fem),
                       width: double.infinity,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -699,7 +699,7 @@ class Nasi extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont(
                                     'Helvetica Neue LT Std',
-                                    fontSize: 13 * ffem,
+                                    fontSize: 12 * ffem,
                                     fontWeight: FontWeight.w500,
                                     height: 1.2575 * ffem / fem,
                                     color: Color(0x7f000000),
