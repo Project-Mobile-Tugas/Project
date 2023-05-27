@@ -1,11 +1,28 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/minuman.dart';
+import 'package:myapp/page-1/register.dart';
 import 'package:myapp/utils.dart';
 
 class Login extends StatelessWidget {
+  Login({super.key});
+
+  //text edit controler
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  //Sign menthod
+  void signInUser() async {
+    await FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+            email: emailController.text, password: passwordController.text)
+        .then((value) => print('User Signed In'))
+        .catchError((error) => print('User Not Signed In'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +80,7 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -84,6 +102,7 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
+                        controller: passwordController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -94,7 +113,7 @@ class Login extends StatelessWidget {
                             Icons.search,
                             color: Color.fromARGB(255, 142, 137, 137),
                           ),
-                          hintText: 'Email',
+                          hintText: 'Password',
                         ),
                       ),
                     ),
@@ -111,7 +130,7 @@ class Login extends StatelessWidget {
                                 ),
                                 primary: Colors.red,
                                 elevation: 2),
-                            onPressed: () {},
+                            onPressed: signInUser,
                             child: Text('Masuk'))),
                     RichText(
                       textAlign: TextAlign.center,
@@ -128,7 +147,7 @@ class Login extends StatelessWidget {
                             text: 'Belum punya akun? ',
                           ),
                           TextSpan(
-                              text: 'Masuk',
+                              text: 'Daftar',
                               style: SafeGoogleFont(
                                 'Helvetica Neue LT Std',
                                 fontSize: 11,
@@ -141,7 +160,7 @@ class Login extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => Minuman()),
+                                            builder: (context) => Register()),
                                       ),
                                     }),
                           TextSpan(
