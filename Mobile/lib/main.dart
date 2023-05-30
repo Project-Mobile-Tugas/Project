@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -26,7 +25,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MyApp());
-} 
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => AuthPage(),
+        '/': (context) => Login(),
       },
     );
   }

@@ -5,7 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/Login.dart';
 import 'package:myapp/utils.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  bool passenable = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +70,7 @@ class Register extends StatelessWidget {
                       width: double.infinity,
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -70,10 +78,11 @@ class Register extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           prefixIcon: Icon(
-                            Icons.search,
+                            Icons.alternate_email,
                             color: Color.fromARGB(255, 142, 137, 137),
                           ),
-                          hintText: 'Email',
+                          labelText: 'Email',
+                          hintText: 'email@example.com',
                         ),
                       ),
                     ),
@@ -84,6 +93,7 @@ class Register extends StatelessWidget {
                       width: double.infinity,
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
+                        obscureText: passenable,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -91,10 +101,20 @@ class Register extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           prefixIcon: Icon(
-                            Icons.search,
+                            Icons.vpn_key_outlined,
                             color: Color.fromARGB(255, 142, 137, 137),
                           ),
-                          hintText: 'Email',
+                          labelText: 'Password',
+                          hintText: 'Enter Password',
+                          suffixIcon: IconButton(
+                              icon: Icon(passenable
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  passenable = !passenable;
+                                });
+                              }),
                         ),
                       ),
                     ),

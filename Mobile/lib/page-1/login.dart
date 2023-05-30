@@ -7,9 +7,14 @@ import 'package:myapp/page-1/minuman.dart';
 import 'package:myapp/page-1/register.dart';
 import 'package:myapp/utils.dart';
 
-class Login extends StatelessWidget {
-  Login({super.key});
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
+  @override
+  _LoginState createState() => _LoginState();
+}
 
+class _LoginState extends State<Login> {
+  bool passenable = true;
   //text edit controler
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -40,7 +45,7 @@ class Login extends StatelessWidget {
             color: Color(0xffd9d9d9),
             child: Container(
               width: double.infinity,
-              height: 715,
+              height: 720,
               child: Container(
                 // login2ez (I1:52;1:34)
                 padding: EdgeInsets.fromLTRB(37, 0, 37, 156),
@@ -80,6 +85,7 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
+                        keyboardType: TextInputType.emailAddress,
                         controller: emailController,
                         decoration: InputDecoration(
                           filled: true,
@@ -88,10 +94,11 @@ class Login extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           prefixIcon: Icon(
-                            Icons.search,
+                            Icons.alternate_email,
                             color: Color.fromARGB(255, 142, 137, 137),
                           ),
-                          hintText: 'Email',
+                          labelText: 'Email',
+                          hintText: 'email@example.com',
                         ),
                       ),
                     ),
@@ -102,6 +109,7 @@ class Login extends StatelessWidget {
                       width: double.infinity,
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
+                        obscureText: passenable,
                         controller: passwordController,
                         decoration: InputDecoration(
                           filled: true,
@@ -110,10 +118,20 @@ class Login extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                           prefixIcon: Icon(
-                            Icons.search,
+                            Icons.vpn_key_outlined,
                             color: Color.fromARGB(255, 142, 137, 137),
                           ),
-                          hintText: 'Password',
+                          labelText: 'Password',
+                          hintText: 'Enter Password',
+                          suffixIcon: IconButton(
+                              icon: Icon(passenable
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  passenable = !passenable;
+                                });
+                              }),
                         ),
                       ),
                     ),

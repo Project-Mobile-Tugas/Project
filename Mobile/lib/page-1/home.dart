@@ -17,8 +17,17 @@ class Home extends StatelessWidget {
           'Home',
           style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.logout_outlined,
+                color: Colors.black,
+                size: 30,
+              ))
+        ],
         centerTitle: true, // Menyatukan judul ke tengah app bar
-        backgroundColor: Color(0xffd9d9d9),
+        backgroundColor: Color(0xffeeeeee),
       ),
       body: ListView(
         children: [
