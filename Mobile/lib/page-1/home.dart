@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -6,6 +7,11 @@ import 'package:myapp/utils.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
+
+  void signUserout() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -13,14 +19,14 @@ class Home extends StatelessWidget {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Home',
           style: TextStyle(color: Color.fromARGB(255, 15, 15, 15)),
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(
+              onPressed: signUserout,
+              icon: const Icon(
                 Icons.logout_outlined,
                 color: Colors.black,
                 size: 30,

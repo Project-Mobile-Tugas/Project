@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -12,6 +13,22 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  void signUserUp() async {
+    await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+            email: emailController.text, password: passwordController.text)
+        .then((value) => print('User Signed Up'))
+        .catchError((error) => print('User Not Signed Up'));
+
+    //kirin user ke login page
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+    
+  }
+
+
   bool passenable = true;
   @override
   Widget build(BuildContext context) {
@@ -71,6 +88,7 @@ class _RegisterState extends State<Register> {
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
                         keyboardType: TextInputType.emailAddress,
+                        controller: emailController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -94,6 +112,7 @@ class _RegisterState extends State<Register> {
                       margin: EdgeInsets.only(left: 5, right: 5),
                       child: TextField(
                         obscureText: passenable,
+                        controller: passwordController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -131,7 +150,7 @@ class _RegisterState extends State<Register> {
                                 ),
                                 primary: Colors.red,
                                 elevation: 2),
-                            onPressed: () {},
+                            onPressed: signUserUp,
                             child: Text('Masuk'))),
                     RichText(
                       textAlign: TextAlign.center,
