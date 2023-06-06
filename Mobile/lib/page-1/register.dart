@@ -157,7 +157,7 @@ class _RegisterState extends State<Register> {
                                 primary: Colors.red,
                                 elevation: 2),
                             onPressed: signUserUp,
-                            child: Text('Masuk'))),
+                            child: Text('Daftar'))),
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(

@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/kuah.dart';
+import 'package:myapp/page-1/minuman.dart';
+import 'package:myapp/page-1/transaksi.dart';
+import 'package:myapp/page-1/nasi.dart';
 import 'package:myapp/utils.dart';
 
 class Home extends StatelessWidget {
@@ -262,8 +266,11 @@ class Home extends StatelessWidget {
                                                             30)),
                                               ),
                                               onPressed: () {
-                                                Navigator.pushNamed(
-                                                    context, '/halaman2');
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Transaksi()));
                                               },
                                               child: Text(
                                                 'Pesan Sekarang',
@@ -308,7 +315,13 @@ class Home extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           child: InkWell(
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Nasi()));
+                                            },
                                             child: Image.asset(
                                               'assets/page-1/images/rectangle-3-f8z.png',
                                               fit: BoxFit.cover,
@@ -353,7 +366,13 @@ class Home extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           child: InkWell(
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Kuah()));
+                                            },
                                             child: Image.asset(
                                               'assets/page-1/images/rectangle-4.png',
                                               fit: BoxFit.cover,
@@ -402,7 +421,13 @@ class Home extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           child: InkWell(
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Minuman()));
+                                            },
                                             child: Image.asset(
                                               'assets/page-1/images/rectangle-5-2FG.png',
                                               fit: BoxFit.cover,

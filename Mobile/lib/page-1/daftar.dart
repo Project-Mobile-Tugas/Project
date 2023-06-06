@@ -8,6 +8,10 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/home.dart';
+import 'package:myapp/page-1/nasi.dart';
+import 'package:myapp/page-1/minuman.dart';
+import 'package:myapp/page-1/kuah.dart';
 
 class Daftar extends StatelessWidget {
   const Daftar({Key? key}) : super(key: key);
@@ -31,7 +35,8 @@ class Daftar extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Navigasi kembali saat tombol ditekan
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Home()));
           },
         ),
       ),
@@ -103,7 +108,13 @@ class Daftar extends StatelessWidget {
                                                     BorderRadius.circular(20),
                                               ),
                                             ),
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Nasi()));
+                                            },
                                             child: Text(
                                               "Aneka Makanan",
                                               style: TextStyle(
@@ -157,7 +168,13 @@ class Daftar extends StatelessWidget {
                                                     BorderRadius.circular(20),
                                               ),
                                             ),
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Kuah()));
+                                            },
                                             child: Text(
                                               "Aneka Kuah",
                                               style: TextStyle(
@@ -209,9 +226,15 @@ class Daftar extends StatelessWidget {
                                                     BorderRadius.circular(20),
                                               ),
                                             ),
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Minuman()));
+                                            },
                                             child: Text(
-                                              "Minumman",
+                                              "Minuman",
                                               style: TextStyle(
                                                 color: Color.fromARGB(
                                                     255, 27, 26, 26),
@@ -220,56 +243,6 @@ class Daftar extends StatelessWidget {
                                           ),
                                         ),
                                       ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // group4cf8 (7:501)
-                              width: double.infinity,
-                              height: 46 * fem,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // rectangle5xyt (7:502)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 13 * fem, 0 * fem),
-                                    width: 57 * fem,
-                                    height: 46 * fem,
-                                    child: ClipRRect(
-                                      borderRadius:
-                                          BorderRadius.circular(10 * fem),
-                                      child: Image.asset(
-                                        'assets/page-1/images/rectangle-5.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // box64W (7:513)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 5 * fem, 0 * fem, 6 * fem),
-                                    width: 162 * fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: Color(0x66d9d9d9),
-                                      borderRadius:
-                                          BorderRadius.circular(20 * fem),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        'Cemilan',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Helvetica Neue LT Std',
-                                          fontSize: 14 * ffem,
-                                          fontWeight: FontWeight.w500,
-                                          height: 1.2575 * ffem / fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
                                     ),
                                   ),
                                 ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/transaksi.dart';
 import 'package:myapp/utils.dart';
 
 class Konfirmasi extends StatelessWidget {
@@ -25,7 +26,8 @@ class Konfirmasi extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Navigasi kembali saat tombol ditekan
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Transaksi()));
           },
         ),
       ),

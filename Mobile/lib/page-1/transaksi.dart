@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/confirm-order.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/daftar.dart';
 
 class Transaksi extends StatelessWidget {
   const Transaksi({Key? key}) : super(key: key);
@@ -26,7 +28,8 @@ class Transaksi extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Navigasi kembali saat tombol ditekan
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Daftar()));
           },
         ),
       ),
@@ -187,7 +190,13 @@ class Transaksi extends StatelessWidget {
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  Konfirmasi()));
+                                    },
                                     child: Text(
                                       "Pesan",
                                       style: TextStyle(
