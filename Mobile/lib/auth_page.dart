@@ -7,6 +7,8 @@ import 'package:myapp/page-1/login.dart';
 import 'package:myapp/page-1/minuman.dart';
 import 'package:myapp/page-1/nasi.dart';
 
+import 'package:myapp/page-1/main_page.dart';
+
 import 'login_or_register_page.dart';
 
 class AuthPage extends StatelessWidget {
@@ -21,7 +23,7 @@ class AuthPage extends StatelessWidget {
           if (snapshot.hasData) {
             checkAdminEmail(context, snapshot.data);
             // Panggil metode untuk memeriksa admin dengan user
-            return Home();
+            return MainPage();
           } else {
             return LoginOrRegisterPage();
           }

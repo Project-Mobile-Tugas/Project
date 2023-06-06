@@ -3,14 +3,14 @@ import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/daftar.dart';
 import 'package:myapp/page-1/transaksi.dart';
 
-class Tutup extends StatefulWidget {
-  const Tutup({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<Tutup> createState() => _TutupState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _TutupState extends State<Tutup> {
+class _MainPageState extends State<MainPage> {
   int _selectedTabIndex = 0;
 
   void _onNavbarTapped(int index) {
@@ -32,22 +32,23 @@ class _TutupState extends State<Tutup> {
       const BottomNavigationBarItem(
           icon: Icon(Icons.sticky_note_2), label: "Daftar"),
       const BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart_sharp), label: "Transaksi"),
+          icon: Icon(
+            Icons.shopping_cart_sharp,
+          ),
+          label: "Transaksi"),
     ];
 
     final _bottomNavBar = BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.blue,
+      iconSize: 40,
+      backgroundColor: Color(0xffffffff),
       items: _bottomNavBarItems,
       currentIndex: _selectedTabIndex,
-      unselectedItemColor: Colors.white54,
-      selectedItemColor: Colors.white38,
+      unselectedItemColor: Color(0x7f000000),
+      selectedItemColor: Color.fromARGB(96, 120, 118, 118),
       onTap: _onNavbarTapped,
     );
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
       body: Center(
         child: _listPage[_selectedTabIndex],
       ),
