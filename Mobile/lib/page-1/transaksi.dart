@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -8,6 +10,23 @@ import 'package:myapp/page-1/daftar.dart';
 
 class Transaksi extends StatelessWidget {
   const Transaksi({Key? key}) : super(key: key);
+
+  void KonfirmasiOrder() async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+
+    final pesanSnapshot = await ref.get();
+
+    DatabaseReference ref2 = FirebaseDatabase.instance.ref("/Pesanan");
+    print(ref2);
+    if (ref2 != null) {}
+
+    Map pesan = pesanSnapshot.value as Map;
+
+    print(pesan);
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -191,6 +210,7 @@ class Transaksi extends StatelessWidget {
                                       ),
                                     ),
                                     onPressed: () {
+                                      KonfirmasiOrder();
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(

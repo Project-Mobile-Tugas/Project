@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/page-1/confirm-order.dart';
 import 'package:myapp/page-1/kuah.dart';
 import 'package:myapp/page-1/minuman.dart';
 import 'package:myapp/page-1/transaksi.dart';
@@ -22,29 +23,56 @@ class Home extends StatelessWidget {
     String? uid = user?.uid;
     DatabaseReference ref = FirebaseDatabase.instance.ref("Users/$uid");
 
-    if (ref.child("PesananSementara") == null) {
+    if (ref.child("Pesanan Sementara") == null) {
       await ref.set({
-        "PesananSementara": '',
+        "Pesanan Sementara": '',
       });
     }
-    tambahPesanan(FirebaseAuth.instance.currentUser, "Ayam", 5000);
   }
 
-  void tambahPesanan(User? user, Nama, int Harga) async {
+  void tambahPesanan(User? user, String Nama, int Harga) async {
     //save user token
     String? uid = user?.uid;
     DatabaseReference ref =
-        FirebaseDatabase.instance.ref("Users/$uid/PesananSementara");
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/$Nama");
 
     final pesanSnapshot = await ref.get();
 
-    var dataPesanan = {"Nama": Nama, "Harga": Harga};
-    if (pesanSnapshot == dataPesanan) {
-      //jika sama Harga ditambah 1
-      dataPesanan["Harga"] = dataPesanan["Harga"] + 1;
+    if (pesanSnapshot.value != null) {
+      Map Pesanan = pesanSnapshot.value as Map;
+      int Jumlah = Pesanan["Jumlah"] as int;
+      Jumlah = Jumlah + 1;
+      ref.update({
+        "Jumlah": Jumlah,
+      });
+    } else {
+      ref.set({
+        "Harga": Harga,
+        "Jumlah": 1,
+      });
     }
+  }
 
-    ref.set(dataPesanan);
+  void kurangiPesanan(User? user, String Nama) async {
+    //save user token
+    String? uid = user?.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/$Nama");
+
+    final pesanSnapshot = await ref.get();
+
+    if (pesanSnapshot.value != null) {
+      Map Pesanan = pesanSnapshot.value as Map;
+      int Jumlah = Pesanan["Jumlah"] as int;
+      if (Jumlah == 1) {
+        ref.remove();
+      } else {
+        Jumlah = Jumlah - 1;
+        ref.update({
+          "Jumlah": Jumlah,
+        });
+      }
+    }
   }
 
   @override
@@ -266,11 +294,18 @@ class Home extends StatelessWidget {
                                                             30)),
                                               ),
                                               onPressed: () {
+                                                tambahPesanan(
+                                                    FirebaseAuth
+                                                        .instance.currentUser,
+                                                    "Paket Komplit",
+                                                    30000);
                                                 Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            Transaksi()));
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Konfirmasi(), // Ganti dengan halaman admin yang sesuai
+                                                  ),
+                                                );
                                               },
                                               child: Text(
                                                 'Pesan Sekarang',

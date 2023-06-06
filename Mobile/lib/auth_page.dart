@@ -23,7 +23,7 @@ class AuthPage extends StatelessWidget {
           if (snapshot.hasData) {
             checkAdminEmail(context, snapshot.data);
             // Panggil metode untuk memeriksa admin dengan user
-            return MainPage();
+            return Home();
           } else {
             return LoginOrRegisterPage();
           }
