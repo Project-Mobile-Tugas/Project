@@ -26,9 +26,7 @@ class _LoginState extends State<Login> {
             email: emailController.text, password: passwordController.text)
         .then((value) => print('User Signed In'))
         .catchError((error) => print('User Not Signed In'));
-
         //send user to login page
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
   }
 
   @override

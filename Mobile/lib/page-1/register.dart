@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/auth_page.dart';
 import 'package:myapp/page-1/Login.dart';
 import 'package:myapp/utils.dart';
 
@@ -17,17 +18,22 @@ class _RegisterState extends State<Register> {
   final passwordController = TextEditingController();
 
   void signUserUp() async {
+    void berhasil() {
+      print('User Signed Up');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => AuthPage()),
+      );
+    }
+
     await FirebaseAuth.instance
         .createUserWithEmailAndPassword(
             email: emailController.text, password: passwordController.text)
-        .then((value) => print('User Signed Up'))
+        .then((value) => berhasil())
         .catchError((error) => print('User Not Signed Up'));
 
     //kirin user ke login page
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-    
   }
-
 
   bool passenable = true;
   @override

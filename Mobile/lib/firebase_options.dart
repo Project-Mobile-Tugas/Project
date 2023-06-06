@@ -14,7 +14,6 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -50,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '620197735212',
     projectId: 'uas-pemob-8efc6',
     authDomain: 'uas-pemob-8efc6.firebaseapp.com',
+    databaseURL: 'https://uas-pemob-8efc6-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'uas-pemob-8efc6.appspot.com',
     measurementId: 'G-S65L74D545',
   );
@@ -59,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:620197735212:android:11bd86539d25df4bd65a89',
     messagingSenderId: '620197735212',
     projectId: 'uas-pemob-8efc6',
+    databaseURL: 'https://uas-pemob-8efc6-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'uas-pemob-8efc6.appspot.com',
   );
 
@@ -67,9 +68,9 @@ class DefaultFirebaseOptions {
     appId: '1:620197735212:ios:c92975e40d4c428ed65a89',
     messagingSenderId: '620197735212',
     projectId: 'uas-pemob-8efc6',
+    databaseURL: 'https://uas-pemob-8efc6-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'uas-pemob-8efc6.appspot.com',
-    iosClientId:
-        '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
+    iosClientId: '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
     iosBundleId: 'com.example.test',
   );
 
@@ -78,9 +79,9 @@ class DefaultFirebaseOptions {
     appId: '1:620197735212:ios:c92975e40d4c428ed65a89',
     messagingSenderId: '620197735212',
     projectId: 'uas-pemob-8efc6',
+    databaseURL: 'https://uas-pemob-8efc6-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'uas-pemob-8efc6.appspot.com',
-    iosClientId:
-        '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
+    iosClientId: '620197735212-gbg2fa94v0dhj4ej3eibr7lrn0kh2pgq.apps.googleusercontent.com',
     iosBundleId: 'com.example.test',
   );
 }

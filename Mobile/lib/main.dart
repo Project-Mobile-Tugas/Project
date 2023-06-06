@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -14,6 +16,7 @@ import 'package:myapp/page-1/register.dart';
 import 'package:myapp/page-1/transaksi.dart';
 import 'package:myapp/utils.dart';
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 // import 'package:myapp/page-1/frame-3.dart';
@@ -24,6 +27,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  
   runApp(MyApp());
 }
 

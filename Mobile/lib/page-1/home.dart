@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -12,8 +13,39 @@ class Home extends StatelessWidget {
     await FirebaseAuth.instance.signOut();
   }
 
+  void pesananSementara(User? user) async {
+    //save user token
+    String? uid = user?.uid;
+    DatabaseReference ref = FirebaseDatabase.instance.ref("Users/$uid");
+
+    if (ref.child("PesananSementara") == null) {
+      await ref.set({
+        "PesananSementara": '',
+      });
+    }
+    tambahPesanan(FirebaseAuth.instance.currentUser, "Ayam", 5000);
+  }
+
+  void tambahPesanan(User? user, Nama, int Harga) async {
+    //save user token
+    String? uid = user?.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/PesananSementara");
+
+    final pesanSnapshot = await ref.get();
+
+    var dataPesanan = {"Nama": Nama, "Harga": Harga};
+    if (pesanSnapshot == dataPesanan) {
+      //jika sama Harga ditambah 1
+      dataPesanan["Harga"] = dataPesanan["Harga"] + 1;
+    }
+
+    ref.set(dataPesanan);
+  }
+
   @override
   Widget build(BuildContext context) {
+    pesananSementara(FirebaseAuth.instance.currentUser);
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
