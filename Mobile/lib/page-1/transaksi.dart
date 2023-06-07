@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/confirm-order.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/daftar.dart';
+import 'package:myapp/page-1/main_page.dart';
 
 class Transaksi extends StatelessWidget {
   const Transaksi({Key? key}) : super(key: key);
@@ -73,7 +74,7 @@ class Transaksi extends StatelessWidget {
           ),
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Daftar()));
+                context, MaterialPageRoute(builder: (context) => MainPage()));
           },
         ),
       ),

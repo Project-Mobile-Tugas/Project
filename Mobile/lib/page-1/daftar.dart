@@ -12,6 +12,7 @@ import 'package:myapp/page-1/home.dart';
 import 'package:myapp/page-1/nasi.dart';
 import 'package:myapp/page-1/minuman.dart';
 import 'package:myapp/page-1/kuah.dart';
+import 'package:myapp/page-1/main_page.dart';
 
 class Daftar extends StatelessWidget {
   const Daftar({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class Daftar extends StatelessWidget {
           ),
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Home()));
+                context, MaterialPageRoute(builder: (context) => MainPage()));
           },
         ),
       ),
