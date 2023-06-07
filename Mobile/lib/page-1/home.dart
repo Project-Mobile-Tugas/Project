@@ -627,11 +627,45 @@ class Home extends StatelessWidget {
                                                         Icons.remove_circle,
                                                         color: Colors.red,
                                                       )),
-                                                  Text("0",
-                                                      textAlign: TextAlign.left,
-                                                      style: GoogleFonts
-                                                          .montserrat(
-                                                              fontSize: 12)),
+                                                  StreamBuilder(
+                                                    stream: ref
+                                                        .child("Nasi Goreng Telur")
+                                                        .onValue,
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      if (snapshot.hasData) {
+                                                        var data = snapshot
+                                                            .data!
+                                                            .snapshot
+                                                            .value;
+                                                        if (data != null &&
+                                                            data is Map<String,
+                                                                dynamic>) {
+                                                          int jumlah =
+                                                              data["Jumlah"] ??
+                                                                  0;
+                                                          return Text(
+                                                            jumlah.toString(),
+                                                            textAlign:
+                                                                TextAlign.left,
+                                                            style: GoogleFonts
+                                                                .montserrat(
+                                                              fontSize: 12,
+                                                            ),
+                                                          );
+                                                        }
+                                                      }
+                                                      return Text(
+                                                        "0",
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                        style: GoogleFonts
+                                                            .montserrat(
+                                                          fontSize: 12,
+                                                        ),
+                                                      );
+                                                    },
+                                                  ),
                                                   IconButton(
                                                       onPressed: () {
                                                         tambahPesanan(
@@ -725,8 +759,9 @@ class Home extends StatelessWidget {
                                                         color: Colors.red,
                                                       )),
                                                   StreamBuilder(
-                                                    stream:
-                                                        ref.child("Mie Ayam").onValue,
+                                                    stream: ref
+                                                        .child("Sop Daging")
+                                                        .onValue,
                                                     builder:
                                                         (context, snapshot) {
                                                       if (snapshot.hasData) {
@@ -855,8 +890,9 @@ class Home extends StatelessWidget {
                                                         color: Colors.red,
                                                       )),
                                                   StreamBuilder(
-                                                    stream:
-                                                        ref.child("Ayam Geprek").onValue,
+                                                    stream: ref
+                                                        .child("Ayam Geprek")
+                                                        .onValue,
                                                     builder:
                                                         (context, snapshot) {
                                                       if (snapshot.hasData) {

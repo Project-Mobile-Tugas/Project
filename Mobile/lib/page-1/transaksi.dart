@@ -7,6 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/confirm-order.dart';
+import 'package:myapp/page-1/home.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/daftar.dart';
 import 'package:myapp/page-1/main_page.dart';
@@ -14,25 +15,56 @@ import 'package:myapp/page-1/main_page.dart';
 class Transaksi extends StatelessWidget {
   const Transaksi({Key? key}) : super(key: key);
 
-  void KonfirmasiOrder() async {
+  void KonfirmasiOrder(
+    BuildContext context,
+  ) async {
     final uid = FirebaseAuth.instance.currentUser!.uid;
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
 
     final pesanSnapshot = await ref.get();
-    print(pesanSnapshot.value);
-
     Map pesan = pesanSnapshot.value as Map;
 
-    DatabaseReference ref2 = FirebaseDatabase.instance.ref("/Pesanan/$uid");
+    String orderToken = generateRandomString(10);
 
-    ref2.push().set({
-      'Pesanan': pesanSnapshot.value,
-      'Status': 'Belum Dikonfirmasi',
-      'Total': pesan['Total'],
-      'Waktu': DateTime.now().toString(),
-    });
-    ref.remove();
+    DatabaseReference ref2 = FirebaseDatabase.instance.ref("/Pesanan/$uid");
+    final token = await ref2.get();
+    bool check = true;
+    if (pesan["Total"] == 0) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) =>
+              MainPage(), // Ganti dengan halaman admin yang sesuai
+        ),
+      );
+    } else {
+      while (check) {
+        if (token.hasChild(orderToken)) {
+          orderToken = generateRandomString(10);
+        } else {
+          check = false;
+        }
+      }
+
+      ref2.child(orderToken).set({
+        'Pesanan': pesanSnapshot.value,
+        'Status': 'Belum Dikonfirmasi',
+        'Total': pesan['Total'],
+        'Waktu': DateTime.now().toString(),
+      });
+      ref.remove();
+      ref.set({
+        'Total': 0,
+      });
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Konfirmasi(
+              tokenOrder: orderToken), // Ganti dengan halaman admin yang sesuai
+        ),
+      );
+    }
 
     // print(pesanSnapshot2.value);
     // if (ref2 != null) {}
@@ -55,6 +87,10 @@ class Transaksi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? UserSekarang = FirebaseAuth.instance.currentUser;
+    String? uid = UserSekarang?.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -122,87 +158,151 @@ class Transaksi extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Container(
-                                // autogrouppy6eXzv (XxVW3Xpqob38RTahMJpy6e)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 14 * fem, 156 * fem),
-                                width: double.infinity,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // menuTta (7:573)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 63 * fem, 0 * fem),
-                                      constraints: BoxConstraints(
-                                        maxWidth: 94 * fem,
-                                      ),
-                                      child: Text(
-                                        'Nasi Goreng\nTeh Es\nAyam Geprek\nAir Mineral',
-                                        style: SafeGoogleFont(
-                                          'Sans Serif Collection',
-                                          fontSize: 17 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2575 * ffem / fem,
-                                          color: Color(0xff000000),
+                              StreamBuilder(
+                                stream: ref.onValue,
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    var data = snapshot.data!.snapshot.value;
+
+                                    if (data != null &&
+                                        data is Map<String, dynamic>) {
+                                      int totalHarga = data["Total"] ?? 0;
+                                      List<String> daftarPesanan = [];
+                                      List<String> qty = [];
+
+                                      data.forEach((key, value) {
+                                        if (key != "Total") {
+                                          daftarPesanan.add(key);
+                                          var childData = data[key];
+                                          var jumlah = childData["Jumlah"] ?? 0;
+                                          print(jumlah);
+                                          qty.add(jumlah.toString());
+                                        }
+                                      });
+
+                                      print(daftarPesanan);
+                                      print(qty);
+
+                                      // Ubah dengan daftar pesanan yang sesuai
+
+                                      return Container(
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 14 * fem, 156 * fem),
+                                        width: double.infinity,
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  63 * fem,
+                                                  0 * fem),
+                                              constraints: BoxConstraints(
+                                                maxWidth: 94 * fem,
+                                              ),
+                                              child: ListView.builder(
+                                                itemCount: daftarPesanan.length,
+                                                shrinkWrap: true,
+                                                physics:
+                                                    NeverScrollableScrollPhysics(),
+                                                itemBuilder: (context, index) {
+                                                  String namap =
+                                                      daftarPesanan[index];
+                                                  return Text(
+                                                    namap,
+                                                    style:
+                                                        GoogleFonts.montserrat(
+                                                      fontSize: 17 * ffem,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height:
+                                                          1.2575 * ffem / fem,
+                                                      color: Color(0xff000000),
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                            Container(
+                                              constraints: BoxConstraints(
+                                                maxWidth: 9 * fem,
+                                              ),
+                                              child: ListView.builder(
+                                                itemCount: qty.length,
+                                                shrinkWrap: true,
+                                                physics:
+                                                    NeverScrollableScrollPhysics(),
+                                                itemBuilder: (context, index) {
+                                                  String jumlah = qty[index];
+                                                  return Text(
+                                                    jumlah,
+                                                    style:
+                                                        GoogleFonts.montserrat(
+                                                      fontSize: 17 * ffem,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      height:
+                                                          1.2575 * ffem / fem,
+                                                      color: Color(0xff000000),
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ),
-                                    ),
-                                    Container(
-                                      // xKY (7:574)
-                                      constraints: BoxConstraints(
-                                        maxWidth: 9 * fem,
-                                      ),
-                                      child: Text(
-                                        '2\n3\n1\n1',
-                                        style: SafeGoogleFont(
-                                          'Sans Serif Collection',
-                                          fontSize: 17 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2575 * ffem / fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                      );
+                                    }
+                                  }
+                                  return CircularProgressIndicator(); // Tambahkan indikator progres sementara
+                                },
                               ),
-                              Container(
-                                // autogroupxvqgGr2 (XxVWA7UDDqe4J5FyHHxVqg)
-                                padding: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 12 * fem, 0 * fem),
-                                width: double.infinity,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // totalQBY (7:576)
-                                      margin: EdgeInsets.fromLTRB(
-                                          0 * fem, 0 * fem, 45 * fem, 0 * fem),
-                                      child: Text(
-                                        'Total',
-                                        style: SafeGoogleFont(
-                                          'Sans Serif Collection',
-                                          fontSize: 17 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2575 * ffem / fem,
-                                          color: Color(0xff000000),
+                              StreamBuilder(
+                                stream: ref.onValue,
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    var data = snapshot.data!.snapshot.value;
+
+                                    if (data != null &&
+                                        data is Map<String, dynamic>) {
+                                      int totalHarga = data["Total"] ?? 0;
+
+                                      return Container(
+                                        // autogroupxvqgGr2 (XxVWA7UDDqe4J5FyHHxVqg)
+                                        padding: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 12 * fem, 0 * fem),
+                                        width: double.infinity,
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              // totalQBY (7:576)
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  45 * fem,
+                                                  0 * fem),
+                                              child: Text(
+                                                'Total: $totalHarga', // Tampilkan total harga di sini
+                                                style: SafeGoogleFont(
+                                                  'Sans Serif Collection',
+                                                  fontSize: 17 * ffem,
+                                                  fontWeight: FontWeight.w400,
+                                                  height: 1.2575 * ffem / fem,
+                                                  color: Color(0xff000000),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ),
-                                    ),
-                                    Text(
-                                      // rp530000075x (7:577)
-                                      'Rp53.000,00',
-                                      style: SafeGoogleFont(
-                                        'Sans Serif Collection',
-                                        fontSize: 17 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.2575 * ffem / fem,
-                                        color: Color(0xff000000),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                      );
+                                    }
+                                  }
+                                  return SizedBox(); // Return widget kosong jika snapshot tidak memiliki data
+                                },
                               ),
                             ],
                           ),
@@ -235,12 +335,7 @@ class Transaksi extends StatelessWidget {
                                       ),
                                     ),
                                     onPressed: () {
-                                      KonfirmasiOrder();
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Konfirmasi()));
+                                      KonfirmasiOrder(context);
                                     },
                                     child: Text(
                                       "Pesan",

@@ -97,6 +97,11 @@ class Nasi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? UserSekarang = FirebaseAuth.instance.currentUser;
+    String? uid = UserSekarang?.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+    final totalSnapshot = ref.get();
     double baseWidth = 390;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -215,12 +220,48 @@ class Nasi extends StatelessWidget {
                                                           Icons.remove_circle,
                                                           color: Colors.red,
                                                         )),
-                                                    Text("0",
-                                                        textAlign:
-                                                            TextAlign.left,
-                                                        style: GoogleFonts
-                                                            .montserrat(
-                                                                fontSize: 12)),
+                                                    StreamBuilder(
+                                                      stream: ref
+                                                          .child(
+                                                              "Nasi Goreng Telur")
+                                                          .onValue,
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        if (snapshot.hasData) {
+                                                          var data = snapshot
+                                                              .data!
+                                                              .snapshot
+                                                              .value;
+                                                          if (data != null &&
+                                                              data is Map<
+                                                                  String,
+                                                                  dynamic>) {
+                                                            int jumlah = data[
+                                                                    "Jumlah"] ??
+                                                                0;
+                                                            return Text(
+                                                              jumlah.toString(),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .left,
+                                                              style: GoogleFonts
+                                                                  .montserrat(
+                                                                fontSize: 12,
+                                                              ),
+                                                            );
+                                                          }
+                                                        }
+                                                        return Text(
+                                                          "0",
+                                                          textAlign:
+                                                              TextAlign.left,
+                                                          style: GoogleFonts
+                                                              .montserrat(
+                                                            fontSize: 12,
+                                                          ),
+                                                        );
+                                                      },
+                                                    ),
                                                     IconButton(
                                                         onPressed: () {
                                                           tambahPesanan(
@@ -314,12 +355,45 @@ class Nasi extends StatelessWidget {
                                                           Icons.remove_circle,
                                                           color: Colors.red,
                                                         )),
-                                                    Text("0",
+                                                    StreamBuilder(
+                                                    stream: ref
+                                                        .child("Ayam Geprek")
+                                                        .onValue,
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      if (snapshot.hasData) {
+                                                        var data = snapshot
+                                                            .data!
+                                                            .snapshot
+                                                            .value;
+                                                        if (data != null &&
+                                                            data is Map<String,
+                                                                dynamic>) {
+                                                          int jumlah =
+                                                              data["Jumlah"] ??
+                                                                  0;
+                                                          return Text(
+                                                            jumlah.toString(),
+                                                            textAlign:
+                                                                TextAlign.left,
+                                                            style: GoogleFonts
+                                                                .montserrat(
+                                                              fontSize: 12,
+                                                            ),
+                                                          );
+                                                        }
+                                                      }
+                                                      return Text(
+                                                        "0",
                                                         textAlign:
                                                             TextAlign.left,
                                                         style: GoogleFonts
                                                             .montserrat(
-                                                                fontSize: 12)),
+                                                          fontSize: 12,
+                                                        ),
+                                                      );
+                                                    },
+                                                  ),
                                                     IconButton(
                                                         onPressed: () {
                                                           tambahPesanan(
@@ -413,12 +487,45 @@ class Nasi extends StatelessWidget {
                                                           Icons.remove_circle,
                                                           color: Colors.red,
                                                         )),
-                                                    Text("0",
+                                                    StreamBuilder(
+                                                    stream: ref
+                                                        .child("Nasi Putih")
+                                                        .onValue,
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      if (snapshot.hasData) {
+                                                        var data = snapshot
+                                                            .data!
+                                                            .snapshot
+                                                            .value;
+                                                        if (data != null &&
+                                                            data is Map<String,
+                                                                dynamic>) {
+                                                          int jumlah =
+                                                              data["Jumlah"] ??
+                                                                  0;
+                                                          return Text(
+                                                            jumlah.toString(),
+                                                            textAlign:
+                                                                TextAlign.left,
+                                                            style: GoogleFonts
+                                                                .montserrat(
+                                                              fontSize: 12,
+                                                            ),
+                                                          );
+                                                        }
+                                                      }
+                                                      return Text(
+                                                        "0",
                                                         textAlign:
                                                             TextAlign.left,
                                                         style: GoogleFonts
                                                             .montserrat(
-                                                                fontSize: 12)),
+                                                          fontSize: 12,
+                                                        ),
+                                                      );
+                                                    },
+                                                  ),
                                                     IconButton(
                                                         onPressed: () {
                                                           tambahPesanan(
