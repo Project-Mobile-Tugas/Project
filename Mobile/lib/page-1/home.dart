@@ -594,7 +594,7 @@ class Home extends StatelessWidget {
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                            'Ayam Suwir, Telur',
+                                            'Suwir Ayam, Telur',
                                             textAlign: TextAlign.left,
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 13),
@@ -602,7 +602,7 @@ class Home extends StatelessWidget {
                                           Row(
                                             children: [
                                               Text(
-                                                "Rp. 20.000",
+                                                "Rp. 15.000",
                                                 style: GoogleFonts.montserrat(
                                                     fontSize: 12,
                                                     fontWeight:
@@ -616,7 +616,7 @@ class Home extends StatelessWidget {
                                                             FirebaseAuth
                                                                 .instance
                                                                 .currentUser,
-                                                            "Nasi Goreng Suwir");
+                                                            "Nasi Goreng Telur");
                                                       },
                                                       icon: Icon(
                                                         Icons.remove_circle,
@@ -633,8 +633,8 @@ class Home extends StatelessWidget {
                                                             FirebaseAuth
                                                                 .instance
                                                                 .currentUser,
-                                                            "Nasi Goreng Suwir",
-                                                            20000);
+                                                            "Nasi Goreng Telur",
+                                                            15000);
                                                       },
                                                       icon: Icon(
                                                         Icons.add_circle,
@@ -672,7 +672,7 @@ class Home extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(29),
                                           child: Image.asset(
-                                            'assets/page-1/images/image-2.png',
+                                            'assets/page-1/images/rectangle-4.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -685,13 +685,13 @@ class Home extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text(
-                                            'Mie Ayam',
+                                            'Sop Daging',
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                            'Mie Ayam, Bakso Kecil',
+                                            'Daging, Sayur',
                                             textAlign: TextAlign.left,
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 13),
@@ -713,7 +713,7 @@ class Home extends StatelessWidget {
                                                             FirebaseAuth
                                                                 .instance
                                                                 .currentUser,
-                                                            "Mie Ayam");
+                                                            "Sop Daging");
                                                       },
                                                       icon: Icon(
                                                         Icons.remove_circle,
@@ -730,8 +730,8 @@ class Home extends StatelessWidget {
                                                             FirebaseAuth
                                                                 .instance
                                                                 .currentUser,
-                                                            "Mie Ayam",
-                                                            2000);
+                                                            "Sop Daging",
+                                                            20000);
                                                       },
                                                       icon: Icon(
                                                         Icons.add_circle,
@@ -788,7 +788,7 @@ class Home extends StatelessWidget {
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                            'Ayam, Tempe, Lalapan',
+                                            'Ayam, Lalapan',
                                             textAlign: TextAlign.left,
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 13),
@@ -796,7 +796,7 @@ class Home extends StatelessWidget {
                                           Row(
                                             children: [
                                               Text(
-                                                "Rp. 20.000",
+                                                "Rp. 13.000",
                                                 style: GoogleFonts.montserrat(
                                                     fontSize: 12,
                                                     fontWeight:
@@ -828,7 +828,7 @@ class Home extends StatelessWidget {
                                                                 .instance
                                                                 .currentUser,
                                                             "Ayam Geprek",
-                                                            15000);
+                                                            13000);
                                                       },
                                                       icon: Icon(
                                                         Icons.add_circle,
