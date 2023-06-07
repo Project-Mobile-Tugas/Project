@@ -87,15 +87,11 @@ class Transaksi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
     User? UserSekarang = FirebaseAuth.instance.currentUser;
     String? uid = UserSekarang?.uid;
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
     double baseWidth = 390;
-=======
-    double baseWidth = 400;
->>>>>>> Stashed changes
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
@@ -127,7 +123,7 @@ class Transaksi extends StatelessWidget {
                   Container(
                     // autogrouprwykRmY (XxVVoTPxr34m9gq4LMRWyk)
                     padding: EdgeInsets.fromLTRB(
-                        32 * fem, 33 * fem, 32 * fem, 314 * fem),
+                        32 * fem, 33 * fem, 32 * fem, 214 * fem),
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -378,21 +374,16 @@ class Transaksi extends StatelessWidget {
                                   child: TextButton(
                                     style: TextButton.styleFrom(
                                       backgroundColor:
-                                          Color.fromARGB(255, 225, 128, 101),
+                                          Color.fromARGB(255, 225, 115, 101),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
                                     onPressed: () {
-                                      KonfirmasiOrder();
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Konfirmasi()));
+                                      KonfirmasiOrder(context);
                                     },
                                     child: Text(
-                                      "Batalkan",
+                                      "Pesan",
                                       style: TextStyle(
                                         color: Color.fromARGB(255, 27, 26, 26),
                                       ),
