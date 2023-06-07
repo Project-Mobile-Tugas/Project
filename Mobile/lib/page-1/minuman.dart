@@ -184,7 +184,7 @@ class Minuman extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text(
-                                            'Nasi Goreng Telur',
+                                            'Teh Es',
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold),
@@ -207,7 +207,13 @@ class Minuman extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        kurangiPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Teh Es");
+                                                      },
                                                       icon: Icon(
                                                         Icons.remove_circle,
                                                         color: Colors.red,
@@ -218,7 +224,14 @@ class Minuman extends StatelessWidget {
                                                           .montserrat(
                                                               fontSize: 12)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        tambahPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Teh Es",
+                                                            5000);
+                                                      },
                                                       icon: Icon(
                                                         Icons.add_circle,
                                                         color: Colors.green,

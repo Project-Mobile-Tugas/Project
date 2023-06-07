@@ -59,7 +59,7 @@ class AuthPage extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) =>
-                Home(), // Ganti dengan halaman admin yang sesuai
+                MainPage(), // Ganti dengan halaman admin yang sesuai
           ),
         );
       }
