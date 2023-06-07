@@ -72,8 +72,7 @@ class Transaksi extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => MainPage()));
+            Navigator.of(context).popUntil((route) => route.isFirst);
           },
         ),
       ),

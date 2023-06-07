@@ -11,6 +11,7 @@ import 'package:myapp/page-1/transaksi.dart';
 import 'package:myapp/page-1/nasi.dart';
 import 'package:myapp/service/realtime.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/main_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -343,7 +344,10 @@ class Home extends StatelessWidget {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            Transaksi()));
+                                                            MainPage(
+                                                              selectedTabIndex:
+                                                                  2,
+                                                            )));
                                               },
                                               child: Text(
                                                 'Pesan Sekarang',

@@ -8,9 +8,6 @@ import 'package:myapp/page-1/transaksi.dart';
 import 'package:myapp/utils.dart';
 
 class Konfirmasi extends StatelessWidget {
-
-  
-
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
@@ -31,8 +28,7 @@ class Konfirmasi extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Transaksi()));
+            Navigator.of(context).popUntil((route) => route.isFirst);
           },
         ),
       ),

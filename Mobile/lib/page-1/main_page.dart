@@ -4,14 +4,21 @@ import 'package:myapp/page-1/daftar.dart';
 import 'package:myapp/page-1/transaksi.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+  int selectedTabIndex;
+  MainPage({this.selectedTabIndex = 0, super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  int _selectedTabIndex = 0;
+  late int _selectedTabIndex;
+
+  @override
+  void initState() {
+    _selectedTabIndex = widget.selectedTabIndex;
+    super.initState();
+  }
 
   void _onNavbarTapped(int index) {
     setState(() {
