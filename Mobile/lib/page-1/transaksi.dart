@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -17,14 +19,37 @@ class Transaksi extends StatelessWidget {
         FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
 
     final pesanSnapshot = await ref.get();
-
-    DatabaseReference ref2 = FirebaseDatabase.instance.ref("/Pesanan");
-    print(ref2);
-    if (ref2 != null) {}
+    print(pesanSnapshot.value);
 
     Map pesan = pesanSnapshot.value as Map;
+    
 
-    print(pesan);
+    DatabaseReference ref2 = FirebaseDatabase.instance.ref("/Pesanan/$uid");
+
+    ref2.push().set({
+      'Pesanan': pesanSnapshot.value,
+      'Status': 'Belum Dikonfirmasi',
+      'Total': pesan['Total'],
+      'Waktu': DateTime.now().toString(),
+    });
+
+    // print(pesanSnapshot2.value);
+    // if (ref2 != null) {}
+
+    // Map pesan = pesanSnapshot.value as Map;
+
+    // print(pesan);
+  }
+
+  String generateRandomString(int lengthOfString) {
+    final random = Random();
+    const allChars =
+        'AaBbCcDdlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1EeFfGgHhIiJjKkL234567890';
+    // below statement will generate a random string of length using the characters
+    // and length provided to it
+    final randomString = List.generate(lengthOfString,
+        (index) => allChars[random.nextInt(allChars.length)]).join();
+    return randomString; // return the generated string
   }
 
   @override

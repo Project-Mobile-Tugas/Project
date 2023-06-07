@@ -9,6 +9,7 @@ import 'package:myapp/page-1/kuah.dart';
 import 'package:myapp/page-1/minuman.dart';
 import 'package:myapp/page-1/transaksi.dart';
 import 'package:myapp/page-1/nasi.dart';
+import 'package:myapp/service/realtime.dart';
 import 'package:myapp/utils.dart';
 
 class Home extends StatelessWidget {
@@ -19,13 +20,16 @@ class Home extends StatelessWidget {
   }
 
   void pesananSementara(User? user) async {
+    print("Pesanan Sementara");
     //save user token
     String? uid = user?.uid;
-    DatabaseReference ref = FirebaseDatabase.instance.ref("Users/$uid");
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
 
-    if (ref.child("Pesanan Sementara") == null) {
-      await ref.set({
-        "Pesanan Sementara": '',
+    final totalSnapshot = await ref.get();
+    if (!totalSnapshot.hasChild("Total")) {
+      ref.set({
+        "Total": 0,
       });
     }
   }
@@ -33,23 +37,48 @@ class Home extends StatelessWidget {
   void tambahPesanan(User? user, String Nama, int Harga) async {
     //save user token
     String? uid = user?.uid;
+
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/$Nama");
 
     final pesanSnapshot = await ref.get();
 
-    if (pesanSnapshot.value != null) {
+    DatabaseReference ref2 =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+
+    final totalSnapshot = await ref2.get();
+
+    try {
       Map Pesanan = pesanSnapshot.value as Map;
       int Jumlah = Pesanan["Jumlah"] as int;
       Jumlah = Jumlah + 1;
       ref.update({
         "Jumlah": Jumlah,
       });
-    } else {
+
+      Map totalP = totalSnapshot.value as Map;
+      int total = totalP["Total"] as int;
+      total = total + Harga;
+      ref2.update({
+        "Total": total,
+      });
+      print("Update");
+    } catch (e) {
+      Map totalP = totalSnapshot.value as Map;
+      int total = totalP["Total"] as int;
+      total = total + Harga;
+      ref2.update({
+        "Total": total,
+      });
+      print("Update");
+      //push new or different data to database
+
       ref.set({
         "Harga": Harga,
         "Jumlah": 1,
       });
+
+      print("Set");
     }
   }
 
@@ -61,15 +90,31 @@ class Home extends StatelessWidget {
 
     final pesanSnapshot = await ref.get();
 
-    if (pesanSnapshot.value != null) {
+    DatabaseReference ref2 =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+
+    final totalSnapshot = await ref2.get();
+
+    if (totalSnapshot.hasChild(Nama)) {
       Map Pesanan = pesanSnapshot.value as Map;
       int Jumlah = Pesanan["Jumlah"] as int;
+
+      Map TotalP = totalSnapshot.value as Map;
+      int Total = TotalP["Total"] as int;
+
       if (Jumlah == 1) {
         ref.remove();
+
+        ref2.update({
+          "Total": TotalP["Total"] - Pesanan["Harga"],
+        });
       } else {
         Jumlah = Jumlah - 1;
         ref.update({
           "Jumlah": Jumlah,
+        });
+        ref2.update({
+          "Total": TotalP["Total"] - Pesanan["Harga"],
         });
       }
     }
@@ -294,18 +339,11 @@ class Home extends StatelessWidget {
                                                             30)),
                                               ),
                                               onPressed: () {
-                                                tambahPesanan(
-                                                    FirebaseAuth
-                                                        .instance.currentUser,
-                                                    "Paket Komplit",
-                                                    30000);
                                                 Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        Konfirmasi(), // Ganti dengan halaman admin yang sesuai
-                                                  ),
-                                                );
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Transaksi()));
                                               },
                                               child: Text(
                                                 'Pesan Sekarang',
@@ -569,7 +607,13 @@ class Home extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        kurangiPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Nasi Goreng Suwir");
+                                                      },
                                                       icon: Icon(
                                                         Icons.remove_circle,
                                                         color: Colors.red,
@@ -580,7 +624,14 @@ class Home extends StatelessWidget {
                                                           .montserrat(
                                                               fontSize: 12)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        tambahPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Nasi Goreng Suwir",
+                                                            20000);
+                                                      },
                                                       icon: Icon(
                                                         Icons.add_circle,
                                                         color: Colors.green,
@@ -653,7 +704,13 @@ class Home extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        kurangiPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Mie Ayam");
+                                                      },
                                                       icon: Icon(
                                                         Icons.remove_circle,
                                                         color: Colors.red,
@@ -664,7 +721,14 @@ class Home extends StatelessWidget {
                                                           .montserrat(
                                                               fontSize: 12)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        tambahPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Mie Ayam",
+                                                            2000);
+                                                      },
                                                       icon: Icon(
                                                         Icons.add_circle,
                                                         color: Colors.green,
@@ -737,7 +801,13 @@ class Home extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        kurangiPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Ayam Geprek");
+                                                      },
                                                       icon: Icon(
                                                         Icons.remove_circle,
                                                         color: Colors.red,
@@ -748,7 +818,14 @@ class Home extends StatelessWidget {
                                                           .montserrat(
                                                               fontSize: 12)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        tambahPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Ayam Geprek",
+                                                            15000);
+                                                      },
                                                       icon: Icon(
                                                         Icons.add_circle,
                                                         color: Colors.green,

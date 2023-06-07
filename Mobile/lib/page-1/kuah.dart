@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -6,6 +8,93 @@ import 'package:myapp/utils.dart';
 
 class Kuah extends StatelessWidget {
   const Kuah({super.key});
+
+  void tambahPesanan(User? user, String Nama, int Harga) async {
+    //save user token
+    String? uid = user?.uid;
+
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/$Nama");
+
+    final pesanSnapshot = await ref.get();
+
+    DatabaseReference ref2 =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+
+    final totalSnapshot = await ref2.get();
+
+    try {
+      Map Pesanan = pesanSnapshot.value as Map;
+      int Jumlah = Pesanan["Jumlah"] as int;
+      Jumlah = Jumlah + 1;
+      ref.update({
+        "Jumlah": Jumlah,
+      });
+
+      Map totalP = totalSnapshot.value as Map;
+      int total = totalP["Total"] as int;
+      total = total + Harga;
+      ref2.update({
+        "Total": total,
+      });
+      print("Update");
+    } catch (e) {
+      Map totalP = totalSnapshot.value as Map;
+      int total = totalP["Total"] as int;
+      total = total + Harga;
+      ref2.update({
+        "Total": total,
+      });
+      print("Update");
+      //push new or different data to database
+
+      ref.set({
+        "Harga": Harga,
+        "Jumlah": 1,
+      });
+
+      print("Set");
+    }
+  }
+
+  void kurangiPesanan(User? user, String Nama) async {
+    //save user token
+    String? uid = user?.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/$Nama");
+
+    final pesanSnapshot = await ref.get();
+
+    DatabaseReference ref2 =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+
+    final totalSnapshot = await ref2.get();
+
+    if (totalSnapshot.hasChild(Nama)) {
+      Map Pesanan = pesanSnapshot.value as Map;
+      int Jumlah = Pesanan["Jumlah"] as int;
+
+      Map TotalP = totalSnapshot.value as Map;
+      int Total = TotalP["Total"] as int;
+
+      if (Jumlah == 1) {
+        ref.remove();
+
+        ref2.update({
+          "Total": TotalP["Total"] - Pesanan["Harga"],
+        });
+      } else {
+        Jumlah = Jumlah - 1;
+        ref.update({
+          "Jumlah": Jumlah,
+        });
+        ref2.update({
+          "Total": TotalP["Total"] - Pesanan["Harga"],
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
