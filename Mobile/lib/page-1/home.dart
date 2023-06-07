@@ -286,7 +286,7 @@ class Home extends StatelessWidget {
                                                   width: 93,
                                                   height: 21,
                                                   child: Text(
-                                                    'Paket Menu',
+                                                    'Menu Favorit',
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont(
                                                       'Helvetica Neue LT Std',
@@ -349,11 +349,6 @@ class Home extends StatelessWidget {
                                                     FirebaseAuth
                                                         .instance.currentUser,
                                                     "Nasi Goreng",
-                                                    15000);
-                                                tambahPesanan(
-                                                    FirebaseAuth
-                                                        .instance.currentUser,
-                                                    "Teh Es",
                                                     15000);
                                                 Navigator.push(
                                                     context,

@@ -15,6 +15,13 @@ import 'package:myapp/page-1/main_page.dart';
 class Transaksi extends StatelessWidget {
   const Transaksi({Key? key}) : super(key: key);
 
+  void batalkanPesanan() async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
+    ref.remove();
+  }
+
   void KonfirmasiOrder(
     BuildContext context,
   ) async {
@@ -87,15 +94,11 @@ class Transaksi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
     User? UserSekarang = FirebaseAuth.instance.currentUser;
     String? uid = UserSekarang?.uid;
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
     double baseWidth = 390;
-=======
-    double baseWidth = 400;
->>>>>>> Stashed changes
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
@@ -384,12 +387,7 @@ class Transaksi extends StatelessWidget {
                                       ),
                                     ),
                                     onPressed: () {
-                                      KonfirmasiOrder();
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Konfirmasi()));
+                                      batalkanPesanan();
                                     },
                                     child: Text(
                                       "Batalkan",
