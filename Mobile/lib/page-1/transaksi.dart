@@ -130,7 +130,7 @@ class Transaksi extends StatelessWidget {
                   Container(
                     // autogrouprwykRmY (XxVVoTPxr34m9gq4LMRWyk)
                     padding: EdgeInsets.fromLTRB(
-                        32 * fem, 33 * fem, 32 * fem, 314 * fem),
+                        32 * fem, 33 * fem, 32 * fem, 214 * fem),
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -381,7 +381,7 @@ class Transaksi extends StatelessWidget {
                                   child: TextButton(
                                     style: TextButton.styleFrom(
                                       backgroundColor:
-                                          Color.fromARGB(255, 225, 128, 101),
+                                          Color.fromARGB(255, 225, 115, 101),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(20),
                                       ),
