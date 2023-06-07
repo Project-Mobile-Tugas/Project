@@ -8,6 +8,12 @@ import 'package:myapp/page-1/transaksi.dart';
 import 'package:myapp/utils.dart';
 
 class Konfirmasi extends StatelessWidget {
+
+
+  void Orderanterbaru() async{
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 390;
