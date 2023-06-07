@@ -345,6 +345,16 @@ class Home extends StatelessWidget {
                                                             30)),
                                               ),
                                               onPressed: () {
+                                                tambahPesanan(
+                                                    FirebaseAuth
+                                                        .instance.currentUser,
+                                                    "Nasi Goreng",
+                                                    15000);
+                                                tambahPesanan(
+                                                    FirebaseAuth
+                                                        .instance.currentUser,
+                                                    "Teh Es",
+                                                    15000);
                                                 Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
@@ -629,7 +639,8 @@ class Home extends StatelessWidget {
                                                       )),
                                                   StreamBuilder(
                                                     stream: ref
-                                                        .child("Nasi Goreng Telur")
+                                                        .child(
+                                                            "Nasi Goreng Telur")
                                                         .onValue,
                                                     builder:
                                                         (context, snapshot) {
