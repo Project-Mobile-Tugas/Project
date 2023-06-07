@@ -383,7 +383,7 @@ class Transaksi extends StatelessWidget {
                                       KonfirmasiOrder(context);
                                     },
                                     child: Text(
-                                      "Pesan",
+                                      "Batalkan",
                                       style: TextStyle(
                                         color: Color.fromARGB(255, 27, 26, 26),
                                       ),
