@@ -22,7 +22,6 @@ class Transaksi extends StatelessWidget {
     print(pesanSnapshot.value);
 
     Map pesan = pesanSnapshot.value as Map;
-    
 
     DatabaseReference ref2 = FirebaseDatabase.instance.ref("/Pesanan/$uid");
 
@@ -32,6 +31,7 @@ class Transaksi extends StatelessWidget {
       'Total': pesan['Total'],
       'Waktu': DateTime.now().toString(),
     });
+    ref.remove();
 
     // print(pesanSnapshot2.value);
     // if (ref2 != null) {}
