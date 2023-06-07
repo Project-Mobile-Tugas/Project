@@ -196,9 +196,7 @@ class Konfirmasi extends StatelessWidget {
                                       // Ubah dengan daftar pesanan yang sesuai
 
                                       return Container(
-                                        margin: EdgeInsets.fromLTRB(0 * fem,
-                                            0 * fem, 14 * fem, 156 * fem),
-                                        width: double.infinity,
+                                        constraints: BoxConstraints(),
                                         child: Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
@@ -281,8 +279,8 @@ class Konfirmasi extends StatelessWidget {
 
                                       return Container(
                                         // autogroupxvqgGr2 (XxVWA7UDDqe4J5FyHHxVqg)
-                                        padding: EdgeInsets.fromLTRB(0 * fem,
-                                            0 * fem, 12 * fem, 0 * fem),
+                                        padding: EdgeInsets.fromLTRB(81 * fem,
+                                            12 * fem, 54.5 * fem, 10 * fem),
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
@@ -295,6 +293,8 @@ class Konfirmasi extends StatelessWidget {
                                                   0 * fem,
                                                   45 * fem,
                                                   0 * fem),
+                                              width: 50.05 * fem,
+                                              height: double.infinity,
                                               child: Text(
                                                 'Total: $totalHarga', // Tampilkan total harga di sini
                                                 style: SafeGoogleFont(
