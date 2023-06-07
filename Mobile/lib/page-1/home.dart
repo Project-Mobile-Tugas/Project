@@ -281,7 +281,7 @@ class Home extends StatelessWidget {
                                                   width: 93,
                                                   height: 21,
                                                   child: Text(
-                                                    'Menu Favorit',
+                                                    'Paket Menu',
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont(
                                                       'Helvetica Neue LT Std',
@@ -304,7 +304,7 @@ class Home extends StatelessWidget {
                                                   width: 74,
                                                   height: 13,
                                                   child: Text(
-                                                    'Nasi Goreng Telur',
+                                                    'Nasgor, Teh Es',
                                                     textAlign: TextAlign.center,
                                                     style: SafeGoogleFont(
                                                       'Sans Serif Collection',
@@ -352,7 +352,7 @@ class Home extends StatelessWidget {
                                               child: Text(
                                                 'Pesan Sekarang',
                                                 style: TextStyle(
-                                                  fontSize: 7.5,
+                                                  fontSize: 7.4,
                                                   color: Colors.black,
                                                 ),
                                               ))),

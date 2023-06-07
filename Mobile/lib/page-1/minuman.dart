@@ -127,10 +127,7 @@ class Minuman extends StatelessWidget {
               child: Container(
                 // minumandQi (1:95)
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xffeeeeee),
-                  borderRadius: BorderRadius.circular(0 * fem),
-                ),
+
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -153,7 +150,7 @@ class Minuman extends StatelessWidget {
                                 Container(
                                   height: 90,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
+                                    color: Color(0xffeeeeee),
                                     borderRadius:
                                         BorderRadius.circular(10 * fem),
                                   ),
@@ -171,7 +168,7 @@ class Minuman extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(29 * fem),
                                           child: Image.asset(
-                                            'assets/page-1/images/image-2-jrW.png',
+                                            'assets/page-1/images/rectangle-5-2FG.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -190,7 +187,7 @@ class Minuman extends StatelessWidget {
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                            'Ayam Suwir, Telur',
+                                            'Manis, Segar',
                                             textAlign: TextAlign.left,
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 13),
@@ -198,7 +195,7 @@ class Minuman extends StatelessWidget {
                                           Row(
                                             children: [
                                               Text(
-                                                "Rp. 20.000",
+                                                "Rp. 5.000",
                                                 style: GoogleFonts.montserrat(
                                                     fontSize: 12,
                                                     fontWeight:
@@ -251,7 +248,7 @@ class Minuman extends StatelessWidget {
                                 Container(
                                   height: 90,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
+                                    color: Color(0xffeeeeee),
                                     borderRadius:
                                         BorderRadius.circular(10 * fem),
                                   ),
@@ -269,7 +266,7 @@ class Minuman extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(29 * fem),
                                           child: Image.asset(
-                                            'assets/page-1/images/image-2-jrW.png',
+                                            'assets/page-1/images/rectangle-5-2FG.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -282,13 +279,13 @@ class Minuman extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text(
-                                            'Nasi Goreng Telur',
+                                            'Teh Es jumbo',
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                            'Ayam Suwir, Telur',
+                                            'Manis, Segar',
                                             textAlign: TextAlign.left,
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 13),
@@ -296,7 +293,7 @@ class Minuman extends StatelessWidget {
                                           Row(
                                             children: [
                                               Text(
-                                                "Rp. 20.000",
+                                                "Rp. 7.000",
                                                 style: GoogleFonts.montserrat(
                                                     fontSize: 12,
                                                     fontWeight:
@@ -305,7 +302,13 @@ class Minuman extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        kurangiPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Teh Es");
+                                                      },
                                                       icon: Icon(
                                                         Icons.remove_circle,
                                                         color: Colors.red,
@@ -316,7 +319,14 @@ class Minuman extends StatelessWidget {
                                                           .montserrat(
                                                               fontSize: 12)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        tambahPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Teh Es jumbo",
+                                                            7000);
+                                                      },
                                                       icon: Icon(
                                                         Icons.add_circle,
                                                         color: Colors.green,
@@ -336,7 +346,7 @@ class Minuman extends StatelessWidget {
                                 Container(
                                   height: 90,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
+                                    color: Color(0xffeeeeee),
                                     borderRadius:
                                         BorderRadius.circular(10 * fem),
                                   ),
@@ -354,7 +364,7 @@ class Minuman extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(29 * fem),
                                           child: Image.asset(
-                                            'assets/page-1/images/image-2-jrW.png',
+                                            'assets/page-1/images/rectangle-5-2FG.png',
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -367,13 +377,13 @@ class Minuman extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text(
-                                            'Nasi Goreng Telur',
+                                            'Teh Es Super Jumbo',
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           Text(
-                                            'Ayam Suwir, Telur',
+                                            'Segar, Manis',
                                             textAlign: TextAlign.left,
                                             style: GoogleFonts.montserrat(
                                                 fontSize: 13),
@@ -381,7 +391,7 @@ class Minuman extends StatelessWidget {
                                           Row(
                                             children: [
                                               Text(
-                                                "Rp. 20.000",
+                                                "Rp. 10.000",
                                                 style: GoogleFonts.montserrat(
                                                     fontSize: 12,
                                                     fontWeight:
@@ -390,7 +400,13 @@ class Minuman extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        kurangiPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Teh Es");
+                                                      },
                                                       icon: Icon(
                                                         Icons.remove_circle,
                                                         color: Colors.red,
@@ -401,7 +417,14 @@ class Minuman extends StatelessWidget {
                                                           .montserrat(
                                                               fontSize: 12)),
                                                   IconButton(
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        tambahPesanan(
+                                                            FirebaseAuth
+                                                                .instance
+                                                                .currentUser,
+                                                            "Teh Es Super Jumbo",
+                                                            10000);
+                                                      },
                                                       icon: Icon(
                                                         Icons.add_circle,
                                                         color: Colors.green,
@@ -414,264 +437,6 @@ class Minuman extends StatelessWidget {
                                       )
                                     ],
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Container(
-                                  height: 90,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
-                                    borderRadius:
-                                        BorderRadius.circular(10 * fem),
-                                  ),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // image2GWa (1:158)
-                                        margin: EdgeInsets.fromLTRB(20 * fem,
-                                            0 * fem, 28.5 * fem, 0 * fem),
-                                        width: 41 * fem,
-                                        height: 42 * fem,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(29 * fem),
-                                          child: Image.asset(
-                                            'assets/page-1/images/image-2-jrW.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            'Nasi Goreng Telur',
-                                            style: GoogleFonts.montserrat(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text(
-                                            'Ayam Suwir, Telur',
-                                            textAlign: TextAlign.left,
-                                            style: GoogleFonts.montserrat(
-                                                fontSize: 13),
-                                          ),
-                                          Row(
-                                            children: [
-                                              Text(
-                                                "Rp. 20.000",
-                                                style: GoogleFonts.montserrat(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  IconButton(
-                                                      onPressed: () {},
-                                                      icon: Icon(
-                                                        Icons.remove_circle,
-                                                        color: Colors.red,
-                                                      )),
-                                                  Text("0",
-                                                      textAlign: TextAlign.left,
-                                                      style: GoogleFonts
-                                                          .montserrat(
-                                                              fontSize: 12)),
-                                                  IconButton(
-                                                      onPressed: () {},
-                                                      icon: Icon(
-                                                        Icons.add_circle,
-                                                        color: Colors.green,
-                                                      )),
-                                                ],
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Container(
-                                  height: 90,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
-                                    borderRadius:
-                                        BorderRadius.circular(10 * fem),
-                                  ),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // image2GWa (1:158)
-                                        margin: EdgeInsets.fromLTRB(20 * fem,
-                                            0 * fem, 28.5 * fem, 0 * fem),
-                                        width: 41 * fem,
-                                        height: 42 * fem,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(29 * fem),
-                                          child: Image.asset(
-                                            'assets/page-1/images/image-2-jrW.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            'Nasi Goreng Telur',
-                                            style: GoogleFonts.montserrat(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text(
-                                            'Ayam Suwir, Telur',
-                                            textAlign: TextAlign.left,
-                                            style: GoogleFonts.montserrat(
-                                                fontSize: 13),
-                                          ),
-                                          Row(
-                                            children: [
-                                              Text(
-                                                "Rp. 20.000",
-                                                style: GoogleFonts.montserrat(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  IconButton(
-                                                      onPressed: () {},
-                                                      icon: Icon(
-                                                        Icons.remove_circle,
-                                                        color: Colors.red,
-                                                      )),
-                                                  Text("0",
-                                                      textAlign: TextAlign.left,
-                                                      style: GoogleFonts
-                                                          .montserrat(
-                                                              fontSize: 12)),
-                                                  IconButton(
-                                                      onPressed: () {},
-                                                      icon: Icon(
-                                                        Icons.add_circle,
-                                                        color: Colors.green,
-                                                      )),
-                                                ],
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Container(
-                                  height: 90,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
-                                    borderRadius:
-                                        BorderRadius.circular(10 * fem),
-                                  ),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // image2GWa (1:158)
-                                        margin: EdgeInsets.fromLTRB(20 * fem,
-                                            0 * fem, 28.5 * fem, 0 * fem),
-                                        width: 41 * fem,
-                                        height: 42 * fem,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(29 * fem),
-                                          child: Image.asset(
-                                            'assets/page-1/images/image-2-jrW.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            'Nasi Goreng Telur',
-                                            style: GoogleFonts.montserrat(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text(
-                                            'Ayam Suwir, Telur',
-                                            textAlign: TextAlign.left,
-                                            style: GoogleFonts.montserrat(
-                                                fontSize: 13),
-                                          ),
-                                          Row(
-                                            children: [
-                                              Text(
-                                                "Rp. 20.000",
-                                                style: GoogleFonts.montserrat(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Row(
-                                                children: [
-                                                  IconButton(
-                                                      onPressed: () {},
-                                                      icon: Icon(
-                                                        Icons.remove_circle,
-                                                        color: Colors.red,
-                                                      )),
-                                                  Text("0",
-                                                      textAlign: TextAlign.left,
-                                                      style: GoogleFonts
-                                                          .montserrat(
-                                                              fontSize: 12)),
-                                                  IconButton(
-                                                      onPressed: () {},
-                                                      icon: Icon(
-                                                        Icons.add_circle,
-                                                        color: Colors.green,
-                                                      )),
-                                                ],
-                                              )
-                                            ],
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 6,
                                 ),
                               ],
                             ),
