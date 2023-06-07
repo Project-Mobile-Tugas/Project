@@ -87,11 +87,15 @@ class Transaksi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     User? UserSekarang = FirebaseAuth.instance.currentUser;
     String? uid = UserSekarang?.uid;
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("Users/$uid/Pesanan Sementara/");
     double baseWidth = 390;
+=======
+    double baseWidth = 400;
+>>>>>>> Stashed changes
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Scaffold(
@@ -123,7 +127,7 @@ class Transaksi extends StatelessWidget {
                   Container(
                     // autogrouprwykRmY (XxVVoTPxr34m9gq4LMRWyk)
                     padding: EdgeInsets.fromLTRB(
-                        32 * fem, 33 * fem, 32 * fem, 214 * fem),
+                        32 * fem, 33 * fem, 32 * fem, 314 * fem),
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -339,6 +343,56 @@ class Transaksi extends StatelessWidget {
                                     },
                                     child: Text(
                                       "Pesan",
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 27, 26, 26),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          // pesanbuttonqne (7:581)
+                          margin: EdgeInsets.fromLTRB(
+                              71 * fem, 0 * fem, 81 * fem, 0 * fem),
+                          width: double.infinity,
+                          height: 29 * fem,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10 * fem),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                // buttonA4E (7:578)
+                                left: 13 * fem,
+                                top: 0 * fem,
+                                child: Container(
+                                  // pesanrhk (7:579)
+                                  width: 170,
+                                  height: 30,
+                                  child: TextButton(
+                                    style: TextButton.styleFrom(
+                                      backgroundColor:
+                                          Color.fromARGB(255, 225, 128, 101),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      KonfirmasiOrder();
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  Konfirmasi()));
+                                    },
+                                    child: Text(
+                                      "Batalkan",
                                       style: TextStyle(
                                         color: Color.fromARGB(255, 27, 26, 26),
                                       ),
