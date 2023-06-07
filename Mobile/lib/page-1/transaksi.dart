@@ -32,6 +32,7 @@ class Transaksi extends StatelessWidget {
       'Total': pesan['Total'],
       'Waktu': DateTime.now().toString(),
     });
+    ref.remove();
 
     // print(pesanSnapshot2.value);
     // if (ref2 != null) {}
